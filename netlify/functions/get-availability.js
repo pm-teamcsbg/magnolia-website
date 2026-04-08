@@ -46,10 +46,14 @@ function parseICal(icalData) {
     return events;
 }
 
-// Expand events into individual booked dates
+// Expand events into booked dates and turnover dates
+// Turnover days = check-in dates where a previous guest can still check out that morning
 function getBookedDates(events) {
     const booked = new Set();
+    const checkinDates = new Set();
+
     for (const event of events) {
+        checkinDates.add(event.start);
         const start = new Date(event.start + 'T00:00:00');
         const end = new Date(event.end + 'T00:00:00');
         let current = new Date(start);
@@ -59,7 +63,15 @@ function getBookedDates(events) {
             current.setDate(current.getDate() + 1);
         }
     }
-    return Array.from(booked).sort();
+
+    // Turnover days: dates that are a check-in for one booking.
+    // These are available for checkout but not for new check-ins.
+    const turnoverDates = Array.from(checkinDates).sort();
+
+    return {
+        allDates: Array.from(booked).sort(),
+        turnoverDates
+    };
 }
 
 exports.handler = async function(event, context) {
@@ -73,13 +85,14 @@ exports.handler = async function(event, context) {
     try {
         const icalData = await fetchICal(ICAL_URL);
         const events = parseICal(icalData);
-        const bookedDates = getBookedDates(events);
+        const result = getBookedDates(events);
 
         return {
             statusCode: 200,
             headers,
             body: JSON.stringify({
-                bookedDates,
+                bookedDates: result.allDates,
+                turnoverDates: result.turnoverDates,
                 events,
                 lastUpdated: new Date().toISOString()
             })

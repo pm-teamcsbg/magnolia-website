@@ -935,6 +935,13 @@
             text-decoration: line-through; cursor: not-allowed;
             pointer-events: none;
         }
+        .day.turnover {
+            background: linear-gradient(135deg, #e8f5e9 50%, #f5f5f5 50%);
+            color: #2e7d32; cursor: pointer; font-weight: 600;
+        }
+        .day.turnover:hover {
+            background: var(--sand); color: var(--navy);
+        }
         .day.available { cursor: pointer; }
         .day.available:hover {
             background: var(--sand); color: var(--navy); font-weight: 600;
@@ -1791,6 +1798,7 @@
 
                 <div class="calendar-legend">
                     <div class="legend-item"><div class="legend-swatch" style="background:#e8f5e9;border-color:#c8e6c9;"></div> Available</div>
+                    <div class="legend-item"><div class="legend-swatch" style="background:linear-gradient(135deg, #e8f5e9 50%, #f5f5f5 50%);border-color:#c8e6c9;"></div> Checkout only</div>
                     <div class="legend-item"><div class="legend-swatch" style="background:#f5f5f5;border-color:#ddd;"></div> Booked</div>
                     <div class="legend-item"><div class="legend-swatch" style="background:var(--teal);border-color:var(--teal);"></div> Check-in</div>
                     <div class="legend-item"><div class="legend-swatch" style="background:var(--navy);border-color:var(--navy);"></div> Check-out</div>
@@ -2241,7 +2249,9 @@
 
         function expandRangesToDates(ranges) {
             var dates = new Set();
+            var turnovers = new Set();
             ranges.forEach(function(r) {
+                turnovers.add(r.start); // check-in day is a turnover day
                 var d = new Date(r.start + 'T00:00:00');
                 var end = new Date(r.end + 'T00:00:00');
                 while (d < end) {
@@ -2249,8 +2259,11 @@
                     d.setDate(d.getDate() + 1);
                 }
             });
-            return dates;
+            return { booked: dates, turnovers: turnovers };
         }
+
+        // Turnover dates: check-in days that are still available for checkout
+        var turnoverDates = new Set();
 
         // Fetch availability from Netlify Function, fall back to snapshot
         async function fetchAvailability() {
@@ -2259,9 +2272,12 @@
                 if (!res.ok) throw new Error('Function unavailable');
                 const data = await res.json();
                 bookedDates = new Set(data.bookedDates);
+                turnoverDates = new Set(data.turnoverDates || []);
             } catch (e) {
                 // Use embedded snapshot as fallback
-                bookedDates = expandRangesToDates(bookingSnapshot);
+                var result = expandRangesToDates(bookingSnapshot);
+                bookedDates = result.booked;
+                turnoverDates = result.turnovers;
             }
             generateCalendar();
         }
@@ -2281,12 +2297,20 @@
             return d.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric', year:'numeric'});
         }
 
-        // Check if any date in a range is booked
+        // Check if any date in a range is booked (excluding turnover days at checkout position)
         function rangeHasBookedDate(start, end) {
             let d = new Date(start);
             d.setDate(d.getDate() + 1); // skip check-in day itself
             while (d < end) {
-                if (bookedDates.has(dateToStr(d))) return true;
+                var ds = dateToStr(d);
+                // A turnover day on the checkout date itself is OK (guest checks out morning, new guest checks in afternoon)
+                // But a turnover day in the middle of the range means there's a conflict
+                if (bookedDates.has(ds)) {
+                    // Allow turnover day only if it's the checkout day (end date)
+                    if (!(turnoverDates.has(ds) && d.getTime() === end.getTime())) {
+                        return true;
+                    }
+                }
                 d.setDate(d.getDate() + 1);
             }
             return false;
@@ -2294,15 +2318,24 @@
 
         function handleDayClick(dateStr) {
             const clicked = strToDate(dateStr);
+            const isTurnover = turnoverDates.has(dateStr);
 
             if (!selectedCheckin || (selectedCheckin && selectedCheckout)) {
                 // First click or reset: set check-in
+                if (isTurnover) {
+                    alert('This date is a check-in day for another guest. You can select it as a check-out date, but not as a check-in.');
+                    return;
+                }
                 selectedCheckin = clicked;
                 selectedCheckout = null;
             } else {
                 // Second click: set check-out
                 if (clicked <= selectedCheckin) {
                     // Clicked before check-in, reset to this as new check-in
+                    if (isTurnover) {
+                        alert('This date is a check-in day for another guest. You can select it as a check-out date, but not as a check-in.');
+                        return;
+                    }
                     selectedCheckin = clicked;
                     selectedCheckout = null;
                 } else if (Math.round((clicked - selectedCheckin) / (1000*60*60*24)) < 3) {
@@ -2459,6 +2492,10 @@
 
                 if (currentDate < today) {
                     dayEl.classList.add('past');
+                } else if (bookedDates.has(ds) && turnoverDates.has(ds)) {
+                    // Turnover day: someone checks in, but previous guest can check out
+                    dayEl.classList.add('turnover');
+                    dayEl.addEventListener('click', function() { handleDayClick(ds); });
                 } else if (bookedDates.has(ds)) {
                     dayEl.classList.add('booked');
                 } else {
