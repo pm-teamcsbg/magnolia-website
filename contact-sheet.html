@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnolia Photo Contact Sheet - Updated Captions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; padding: 2rem; }
+        h1 { text-align: center; margin-bottom: 0.5rem; color: #1B3A5C; }
+        .instructions { text-align: center; color: #666; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .categories { text-align: center; margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .categories h3 { margin-bottom: 0.5rem; color: #1B3A5C; }
+        .cat-list { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+        .cat-tag { background: #e8f0f8; padding: 0.3rem 0.75rem; border-radius: 4px; font-size: 0.85rem; color: #1B3A5C; cursor: pointer; transition: background 0.2s; }
+        .cat-tag:hover, .cat-tag.active { background: #2E8B8B; color: white; }
+        .stats { text-align: center; margin-bottom: 2rem; padding: 1rem; background: white; border-radius: 8px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .stats h3 { margin-bottom: 0.5rem; color: #1B3A5C; }
+        .stat-row { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; font-size: 0.85rem; }
+        .stat-item { background: #f0f0f0; padding: 0.3rem 0.7rem; border-radius: 4px; }
+        .stat-count { font-weight: 700; color: #1B3A5C; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; max-width: 1400px; margin: 0 auto; }
+        .photo-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: opacity 0.3s; }
+        .photo-card.dim { opacity: 0.25; }
+        .photo-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; cursor: pointer; }
+        .photo-info { padding: 0.75rem; }
+        .photo-num { font-weight: 700; color: #1B3A5C; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+        .photo-cats { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+        .photo-cat { display: inline-block; background: #2E8B8B; color: white; padding: 0.15rem 0.6rem; border-radius: 3px; font-size: 0.7rem; font-weight: 600; }
+        .photo-desc { font-size: 0.85rem; color: #444; margin-top: 0.35rem; line-height: 1.5; font-style: italic; }
+        /* Lightbox */
+        #lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:999; justify-content:center; align-items:center; cursor:pointer; }
+        #lb img { max-width:90vw; max-height:85vh; object-fit:contain; border-radius:4px; }
+        #lbcap { position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%); color:white; font-size:1rem; text-align:center; background:rgba(0,0,0,0.6); padding:0.5rem 1rem; border-radius:4px; max-width: 80vw; }
+    </style>
+</head>
+<body>
+    <h1>Magnolia Photo Contact Sheet</h1>
+    <div class="instructions">
+        Captions rewritten in listing style. Photos can now belong to multiple categories.<br>
+        Click any photo to see it full-size. Click a category tag to filter.
+    </div>
+    <div class="categories">
+        <h3>Categories (click to filter)</h3>
+        <div class="cat-list" id="catList">
+            <span class="cat-tag active" onclick="filterCat('all')">All</span>
+        </div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="grid" id="grid"></div>
+    <div id="lb" onclick="this.style.display='none'"><img id="lbimg" src=""><div id="lbcap"></div></div>
+<script>
+const photos = [
+    {"id": "01", "cat": ["living", "exterior"], "label": "Living Room Overview", "desc": "For the rare moments you are inside, settle into a cozy slipcover sofa as you gaze at the ocean."},
+    {"id": "02", "cat": ["pool", "exterior", "backyard"], "label": "Pool & House at Dusk", "desc": "A dip in the pool at sunset can be one of the most enjoyable memories while visiting Magnolia By The Sea."},
+    {"id": "03", "cat": ["rooftop", "backyard", "exterior"], "label": "Rooftop Deck Sunset", "desc": "Champagne, cheese plate, and sunsets from the rooftop deck? Yes please!"},
+    {"id": "04", "cat": ["golf-cart", "exterior"], "label": "House Front & Golf Cart", "desc": "The retro home elevation invites you in, and the included golf cart whisks you away."},
+    {"id": "05", "cat": ["beach", "neighborhood"], "label": "Beach Access Sign", "desc": "Top-rated Indian Rocks Beach is only 2 minutes away. 'It's our favourite Florida Beach.' - Steve K."},
+    {"id": "06", "cat": ["neighborhood", "exterior"], "label": "Aerial Waterfront", "desc": "Expansive waterfront views? Check. Perfect white sand beach? Check. Relaxed island town? Check."},
+    {"id": "07", "cat": ["golf-cart"], "label": "Golf Cart & Beach Gear", "desc": "Included is a 6-passenger golf cart and plenty of beach accessories to help you travel light."},
+    {"id": "08", "cat": ["dining", "kitchen"], "label": "Dining Room", "desc": "As you walk into the home, you'll find the inviting dining area and immediate views of the water."},
+    {"id": "09", "cat": ["neighborhood"], "label": "Coco's Crush Bar Patio", "desc": "IRB is home to world-recognized restaurants, including Coco's Crush Bar. Just hop on the golf cart and drive right up!"},
+    {"id": "10", "cat": ["living", "dining"], "label": "Open Living Space", "desc": "The modern, simple styling creates an open feel and encourages spending time together with friends and family."},
+    {"id": "11", "cat": ["dining"], "label": "Formal Dining Table", "desc": "There's plenty of room to seat all 10 of your family and friends."},
+    {"id": "12", "cat": ["living"], "label": "Living Room & Beams", "desc": "The upscale decorating makes this feel like your home away from home."},
+    {"id": "13", "cat": ["living"], "label": "Waterfront Lounge", "desc": ". . . but you can also grab an adult beverage and spend time with your significant other."},
+    {"id": "14", "cat": ["living"], "label": "Living Room Water View", "desc": "Did we mention the floor to ceiling glass wall for the perfect view of the backyard oasis?"},
+    {"id": "15", "cat": ["kitchen"], "label": "Kitchen & Sink", "desc": "Everything you need can be found in the chef's kitchen. . ."},
+    {"id": "16", "cat": ["kitchen"], "label": "Espresso Machine", "desc": ". . . including the most important, the espresso machine."},
+    {"id": "17", "cat": ["kitchen", "dining"], "label": "Kitchen Counter", "desc": "There's plenty of space for more than one cook in the kitchen."},
+    {"id": "18", "cat": ["living"], "label": "Magnolia Sign", "desc": "We are proud of our cozy abode – and we hope you take a pic next to the sign and share it with us!"},
+    {"id": "19", "cat": ["living", "dining"], "label": "Entry Foyer", "desc": "Step into the home, drop your suitcases, and take the golf cart to the beach!"},
+    {"id": "20", "cat": ["beach", "neighborhood"], "label": "Beach Sunset", "desc": "This white sand beach is only 2 minutes away, using the provided golf cart."},
+    {"id": "21", "cat": ["poolside-room"], "label": "Poolside Room King Bed", "desc": "Take your first nap of the trip by walking up the stairs and jumping into the king bed."},
+    {"id": "22", "cat": ["backyard", "dock", "oceanfront-balcony-room", "exterior"], "label": "Waterfront Seating", "desc": ". . . and incorporates a nice seating area for your morning coffee."},
+    {"id": "23", "cat": ["oceanfront-balcony-room"], "label": "Oceanfront Balcony Room", "desc": "There's plenty of room to spread out and find relaxation."},
+    {"id": "24", "cat": ["private-retreat"], "label": "Private Retreat", "desc": "The hardest part will be choosing which room you want to stay in."},
+    {"id": "25", "cat": ["private-retreat"], "label": "Private Retreat View", "desc": "The front upstairs master has a vaulted ceiling and easy access to the bathroom."},
+    {"id": "26", "cat": ["poolside-room"], "label": "Poolside Room", "desc": "The downstairs master has patio doors that lead right out to the resort-style backyard."},
+    {"id": "27", "cat": ["poolside-room"], "label": "Poolside Room", "desc": "Sleep with the doors open or closed? Decisions, decisions."},
+    {"id": "28", "cat": ["backyard", "exterior", "poolside-room"], "label": "Waterfront Deck", "desc": "The views from your private patio are second to none, and you don't have to walk far to dip your toe in the pool."},
+    {"id": "30", "cat": ["bathroom"], "label": "Walk-In Shower", "desc": "Right off the foyer and just outside one of the king bedrooms, this modern bathroom features a stylish design and a walk-in shower."},
+    {"id": "67", "cat": ["bathroom"], "label": "Walk-In Shower Detail", "desc": "A modern, walk-in shower is a great way to clean up after a long day at the beach."},
+    {"id": "31", "cat": ["bathroom"], "label": "Double Vanity Bath", "desc": "The upstairs bathroom sits between the 2 upstairs bedrooms. It has two vanities and a walk-in shower."},
+    {"id": "68", "cat": ["bathroom"], "label": "Upstairs Bathroom", "desc": "Another view of the upstairs full bathroom."},
+    {"id": "69", "cat": ["bathroom"], "label": "Bathroom Toilet Area", "desc": ". . . and a separate toilet area for extra privacy."},
+    {"id": "32", "cat": ["bathroom"], "label": "Blue Tile Bath", "desc": "Downstairs, between one of the oceanfront king rooms and the bunk room, is the 3rd bathroom. It has a tub/shower combination in case anyone wants a bath!"},
+    {"id": "33", "cat": ["neighborhood"], "label": "VIP Marina Bar", "desc": "Beach trips equal margaritas. VIP Mexican is only 5 minutes away and has some of the best 'ritas in the world."},
+    {"id": "34", "cat": ["backyard", "exterior", "rooftop"], "label": "Rooftop Dining", "desc": "Grab some fruit, cheese, Italian meats, and wine from a local shop and dinner is served."},
+    {"id": "35", "cat": ["backyard", "dock", "exterior"], "label": "Rooftop Fire Pit", "desc": ". . . or grab a chair, light the fire, and enjoy the colors in the sky next to the crackle of flames."},
+    {"id": "36", "cat": ["pool", "exterior", "backyard"], "label": "Pool at Twilight", "desc": "Can you picture yourself retiring here each evening?"},
+    {"id": "37", "cat": ["backyard", "dining", "dock", "pool"], "label": "Waterfront Table", "desc": "Grabbing a cup of coffee by the water, reading a book and watching the birds is a great way to spend a morning."},
+    {"id": "38", "cat": ["pool", "backyard", "exterior"], "label": "Pool Loungers", "desc": "Separate seating areas give you plenty of options to maximize your time outside."},
+    {"id": "39", "cat": ["backyard", "exterior"], "label": "Grill Station", "desc": "You'll find a new Weber grill and all the tools to make everyone a grillmaster."},
+    {"id": "40", "cat": ["pool", "backyard", "dock", "exterior"], "label": "Pool Sun Shelf", "desc": "The sun shelf is perfect for cooling off without getting your hair wet."},
+    {"id": "41", "cat": ["neighborhood"], "label": "Caddy's Restaurant", "desc": "By boat or by car, Caddy's is always at the top of the places to eat when on the island."},
+    {"id": "42", "cat": ["backyard", "dining", "exterior"], "label": "Covered Outdoor Dining", "desc": "Since the outdoor dining area is covered, you can use it any time and in any weather."},
+    {"id": "43", "cat": ["dock"], "label": "Dock Fishing Chair", "desc": "Is there anything better than casting a line, drinking a cold beer, and feeling the ocean breeze?"},
+    {"id": "44", "cat": ["dock"], "label": "Kayak Launch", "desc": "Launching a kayak is even easier with the kayak launch attached to the dock."},
+    {"id": "45", "cat": ["backyard", "pool", "exterior", "dock"], "label": "Kayaks by Pool", "desc": "The huge side yard gives you lots of extra space, and the 2 kayaks are there when you're ready to explore the ocean waters right off your backyard!"},
+    {"id": "46", "cat": ["neighborhood", "exterior", "dock", "pool"], "label": "Aerial Waterfront", "desc": "'The island life is the life for me.' – Everyone"},
+    {"id": "47", "cat": ["neighborhood"], "label": "Clearwater Aquarium", "desc": "Clearwater Marine Aquarium, home of 'Winter' and 'Hope', is only minutes away."},
+    {"id": "48", "cat": ["dock", "pool", "backyard", "exterior"], "label": "Pool & Dock Twilight", "desc": "The prettiest view of the property is from the rooftop deck looking down at twilight."},
+    {"id": "49", "cat": ["neighborhood"], "label": "Guppy's Restaurant", "desc": "Back on IRB, if you're looking for a nice lunch or dinner, be sure to hit up Guppy's – you can walk or take the golf cart."},
+    {"id": "50", "cat": ["neighborhood"], "label": "Salt Rock Grill", "desc": "Salt Rock Grill is a great destination for a nice family dinner or romantic night out."},
+    {"id": "51", "cat": ["living"], "label": "Open Staircase", "desc": "The hardest part will be choosing which room you want to stay in."},
+    {"id": "52", "cat": ["kitchen"], "label": "Kitchen Detail", "desc": "If anyone wants to whip up a gourmet breakfast or seafood dinner, they'll find everything they need in the well-appointed kitchen."},
+    {"id": "53", "cat": ["kitchen", "dining"], "label": "Kitchen & Dining", "desc": ". . . and the proximity to the dining area means everyone can spend time together."},
+    {"id": "54", "cat": ["neighborhood"], "label": "Downtown Dunedin", "desc": "For those who enjoy microbreweries, great food and shops, take an excursion to the fun little town of Dunedin."},
+    {"id": "55", "cat": ["living"], "label": "Entry & Staircase", "desc": "Stylish, coastal touches greet you from the moment you walk in the door."},
+    {"id": "56", "cat": ["living", "oceanfront-balcony-room"], "label": "Oceanfront Balcony Room", "desc": "The oceanfront upstairs master bedroom features an ocean view, luscious king bed, and a private balcony."},
+    {"id": "57", "cat": ["oceanfront-balcony-room"], "label": "Oceanfront Sitting Area", "desc": "The upstairs oceanfront master is strategically located right off the living room."},
+    {"id": "58", "cat": ["backyard", "rooftop", "oceanfront-balcony-room", "exterior"], "label": "Oceanfront Balcony", "desc": "With clear views of the intracoastal and a stair leading up to the rooftop deck."},
+    {"id": "59", "cat": ["private-retreat"], "label": "Private Retreat TV", "desc": "Each room has a brand new Samsung Smart TV. This room has ensuite access to the upstairs bathroom."},
+    {"id": "60", "cat": ["private-retreat"], "label": "Private Retreat", "desc": "The 2nd upstairs master features a luxurious king bed and plenty of room for your suitcases and snorkeling gear."},
+    {"id": "61", "cat": ["poolside-room"], "label": "Poolside Room", "desc": "The downstairs master has a comfortable king bed for any of your family or friends."},
+    {"id": "62", "cat": ["backyard", "pool", "exterior", "poolside-room"], "label": "Poolside Patio", "desc": "Choose the downstairs master? This will be your patio."},
+    {"id": "64", "cat": ["bunk-haven"], "label": "Bunk Haven", "desc": "Everyone loves bunk rooms! Four custom, built-in bunk beds feature Twin XL mattresses to comfortably fit kids or even adults."},
+    {"id": "65", "cat": ["bunk-haven"], "label": "Bunk Nook Detail", "desc": "Each bunk has its own niche, USB outlets, and personal LED light."},
+    {"id": "63", "cat": ["bunk-haven"], "label": "Bunk Haven Nook", "desc": "Which means your kids will beg you to go to bed!"},
+    {"id": "29", "cat": ["bunk-haven"], "label": "Bunk Haven", "desc": "Who gets the top bunk?"},
+    {"id": "66", "cat": ["neighborhood"], "label": "John's Pass", "desc": "John's Pass on nearby Madeira Beach has tons of shops, big restaurants, and fishing charters."},
+    {"id": "70", "cat": ["laundry"], "label": "Laundry Room", "desc": "The laundry room is well-appointed in case you have to do . . . laundry."},
+    {"id": "71", "cat": ["exterior"], "label": "Tesla Charger", "desc": "There is a Tesla charger for the EV drivers in your group."},
+    {"id": "72", "cat": ["backyard", "exterior"], "label": "Outdoor Shower", "desc": "An outdoor shower comes in handy when you get back from the beach or from kayaking."},
+    {"id": "73", "cat": ["dock", "backyard", "pool", "exterior"], "label": "Poolside Wine & Charcuterie", "desc": "Be sure to grab some snacks so you don't have to miss one minute being outdoors!"},
+    {"id": "74", "cat": ["pool", "backyard", "exterior"], "label": "Pool Deck Chairs", "desc": "Which spot will you pick?"},
+    {"id": "75", "cat": ["pool", "exterior", "backyard"], "label": "Pool & Glass Wall", "desc": "The resort-like layout of the backyard really builds on the indoor/outdoor feel of the home."},
+    {"id": "76", "cat": ["pool", "backyard", "exterior"], "label": "Backyard Overview", "desc": "The large back yard is perfect for entertaining day or night."},
+    {"id": "77", "cat": ["pool", "exterior", "dock", "backyard"], "label": "Twilight Pool Glow", "desc": "Right after sunset is the best time to hang out on the rooftop deck."},
+    {"id": "78", "cat": ["pool", "backyard", "exterior"], "label": "House & Pool at Dusk", "desc": "You can't beat the pool, rooftop deck, firepit, and floor to glass ceiling views."},
+    {"id": "79", "cat": ["pool", "backyard", "exterior"], "label": "Pool at Twilight", "desc": "Welcome to Magnolia By The Sea! 'Best beach house in Florida, hands down.' – Kenzie M. '24"},
+    {"id": "80", "cat": ["pool", "backyard", "dining", "exterior"], "label": "Pool Umbrella", "desc": "After a long day in the sun, the shade from an umbrella can be a welcome sight."},
+    {"id": "81", "cat": ["neighborhood", "beach"], "label": "St. Pete Pier", "desc": "Downtown St. Pete has lots of incredible dining options, or you can just take a walk on the pier and grab an adult beverage."},
+    {"id": "82", "cat": ["backyard", "exterior"], "label": "Deck Charcuterie", "desc": "How are your charcuterie skills?"},
+    {"id": "83", "cat": ["dock", "backyard", "dining", "exterior"], "label": "Dock Umbrella Table", "desc": "Sometimes you just want to sit on the dock and watch the boats go by."},
+    {"id": "84", "cat": ["dining", "exterior", "backyard"], "label": "Teak Outdoor Table", "desc": "Care to dine alfresco? The teak outdoor table can be used day or night."},
+    {"id": "85", "cat": ["backyard", "pool", "exterior"], "label": "Pool Loungers Wide", "desc": "If you don't spend time laying by the pool, you didn't do it right."},
+    {"id": "86", "cat": ["exterior"], "label": "House at Dusk", "desc": "The large circular driveway fits lots of cars and the mature landscaping feels like a luxury resort."},
+    {"id": "87", "cat": ["rooftop", "backyard", "exterior"], "label": "Rooftop Sunset", "desc": "Enjoy both sunrises and sunset from the rooftop deck . . ."},
+    {"id": "88", "cat": ["neighborhood"], "label": "Busch Gardens", "desc": "Feeling adventurous? Take a day and visit Busch Gardens, which is a huge amusement park with both rollercoasters and lots of animals to see and interact with."},
+    {"id": "89", "cat": ["neighborhood", "exterior"], "label": "Waterfront Aerial", "desc": "Magnolia By The Sea is really by the sea."},
+    {"id": "90", "cat": ["neighborhood", "exterior"], "label": "Aerial Neighborhood", "desc": "Huge open water views make a huge difference."},
+    {"id": "main-floor", "cat": ["floor-plan", "living", "bathroom", "oceanfront-balcony-room", "private-retreat", "bunk-haven", "poolside-room", "laundry", "kitchen", "dining"], "label": "Main Floor Plan", "desc": "The main floor layout is open and all of the bedrooms are easy to access, no matter where you are."},
+    {"id": "upstairs-floor", "cat": ["floor-plan", "living", "bathroom", "oceanfront-balcony-room", "private-retreat"], "label": "Upstairs Floor Plan", "desc": "The upstairs retreat features 2 master king bedrooms with a large bathroom shared by both."}
+]
+
+const grid = document.getElementById('grid');
+const catCounts = {};
+let activeFilter = 'all';
+
+photos.forEach(p => {
+    p.cat.forEach(c => { catCounts[c] = (catCounts[c] || 0) + 1; });
+    const card = document.createElement('div');
+    card.className = 'photo-card';
+    card.dataset.cats = p.cat.join(',');
+    card.innerHTML = `
+        <img src="photos/gallery/thumbs/${p.id}.jpg" alt="${p.label}" loading="lazy"
+             onclick="document.getElementById('lb').style.display='flex';document.getElementById('lbimg').src='photos/gallery/full/${p.id}.jpg';document.getElementById('lbcap').textContent='#${p.id} — ${p.label} (${p.cat.join(', ')})'">
+        <div class="photo-info">
+            <div class="photo-num">#${p.id}
+                <div class="photo-cats">${p.cat.map(c => `<span class="photo-cat">${c}</span>`).join('')}</div>
+            </div>
+            <div class="photo-desc">${p.desc}</div>
+        </div>
+    `;
+    grid.appendChild(card);
+});
+
+// Build category filter buttons
+const catList = document.getElementById('catList');
+const allCats = Object.keys(catCounts).sort();
+allCats.forEach(c => {
+    const tag = document.createElement('span');
+    tag.className = 'cat-tag';
+    tag.textContent = c + ' (' + catCounts[c] + ')';
+    tag.onclick = () => filterCat(c);
+    tag.dataset.cat = c;
+    catList.appendChild(tag);
+});
+
+function filterCat(cat) {
+    activeFilter = cat;
+    document.querySelectorAll('.cat-tag').forEach(t => {
+        t.classList.toggle('active', cat === 'all' ? t.textContent === 'All' : t.dataset.cat === cat);
+    });
+    document.querySelectorAll('.photo-card').forEach(card => {
+        if (cat === 'all') {
+            card.classList.remove('dim');
+        } else {
+            card.classList.toggle('dim', !card.dataset.cats.split(',').includes(cat));
+        }
+    });
+}
+
+// Stats
+const sorted = Object.entries(catCounts).sort((a,b) => b[1]-a[1]);
+document.getElementById('stats').innerHTML = '<h3>Category Counts (' + photos.length + ' photos, multi-category enabled)</h3><div class="stat-row">' +
+    sorted.map(([c,n]) => `<span class="stat-item">${c}: <span class="stat-count">${n}</span></span>`).join('') + '</div>';
+</script>
+</body>
+</html>
