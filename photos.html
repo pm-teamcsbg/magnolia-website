@@ -39,6 +39,20 @@
         .nav-links a { color: var(--white); font-size: 0.95rem; font-weight: 500; }
         .nav-links a:hover { color: var(--sand); }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none; flex-direction: column; justify-content: center;
+            gap: 5px; cursor: pointer; padding: 8px; margin-left: auto;
+            z-index: 101; background: none; border: none;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 2px; background: var(--white);
+            border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         /* Page Header */
         .page-header {
             padding: 10rem 2rem 3rem; background: var(--navy); text-align: center;
@@ -194,9 +208,20 @@
 
         /* Mobile */
         @media (max-width: 768px) {
-            nav { padding: 0.75rem 1rem; }
-            .logo img { height: 60px; }
-            .nav-links { gap: 1rem; font-size: 0.85rem; }
+            nav { padding: 0.75rem 1rem; flex-wrap: wrap; }
+            .hamburger { display: flex; }
+            .logo img { height: 40px; }
+            .nav-links {
+                display: none; flex-direction: column; width: 100%;
+                gap: 0; padding: 0.5rem 0 0.75rem; order: 3;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links li { width: 100%; }
+            .nav-links a {
+                display: block; padding: 0.75rem 0.5rem; font-size: 0.95rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .nav-links li:last-child a { border-bottom: none; }
             .page-header { padding: 8rem 1rem 2rem; }
             .filter-bar { top: 62px; padding: 0.75rem 1rem; gap: 0.4rem; }
             .filter-btn { padding: 0.4rem 0.9rem; font-size: 0.8rem; }
@@ -214,7 +239,10 @@
         <a href="index.html" class="logo">
             <img src="logo-white.png" alt="Magnolia By The Sea" />
         </a>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html#about">About</a></li>
             <li><a href="photos.html">Gallery</a></li>
             <li><a href="index.html#features">Features</a></li>
@@ -540,6 +568,20 @@ if (window.location.hash) {
     // Initial even rows on load
     setTimeout(enforceEvenRows, 100);
 }
+</script>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        });
+    });
 </script>
 </body>
 </html>
