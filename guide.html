@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Indian Rocks Beach vacation guide: the beach, golf cart culture, best restaurants, things to do, day trips, and when to visit. Local tips from Magnolia By The Sea, a waterfront vacation rental in IRB.">
+    <link rel="canonical" href="https://magnoliabythesea.com/guide.html">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>Indian Rocks Beach Vacation Guide | Magnolia By The Sea</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Indian Rocks Beach Vacation Guide">
+    <meta property="og:description" content="What to do, where to eat, and when to visit Indian Rocks Beach, Florida. Local tips from the hosts of Magnolia By The Sea.">
+    <meta property="og:image" content="https://magnoliabythesea.com/photos/gallery/full/02.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://magnoliabythesea.com/guide.html">
+    <meta property="og:site_name" content="Magnolia By The Sea">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Indian Rocks Beach Vacation Guide",
+      "description": "A local guide to Indian Rocks Beach, Florida: the beach, golf cart culture, restaurants, things to do, day trips, and when to visit.",
+      "url": "https://magnoliabythesea.com/guide.html",
+      "image": "https://magnoliabythesea.com/photos/gallery/full/02.jpg",
+      "dateModified": "2026-07-13",
+      "author": {
+        "@type": "Organization",
+        "name": "Magnolia By The Sea",
+        "url": "https://magnoliabythesea.com"
+      },
+      "about": {
+        "@type": "Place",
+        "name": "Indian Rocks Beach",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Indian Rocks Beach",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Magnolia By The Sea", "item": "https://magnoliabythesea.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Indian Rocks Beach Vacation Guide", "item": "https://magnoliabythesea.com/guide.html"}
+      ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #333; line-height: 1.6; background: #fff;
+        }
+        :root {
+            --navy: #1B3A5C; --sand: #F5EDE3; --white: #FFFFFF;
+            --teal: #2E8B8B; --light-gray: #F8F8F8; --text-dark: #333;
+            --text-light: #666; --accent-gold: #C9A961;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
+        h2 { font-size: clamp(1.75rem, 5vw, 2.75rem); color: var(--navy); margin-bottom: 1.5rem; }
+        h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 0.5rem; }
+        p { color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+        a { color: var(--teal); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--navy); }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            padding: 0.5rem 2rem; background: var(--navy);
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 120px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-links a { color: var(--white); font-size: 0.95rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--sand); }
+
+        .hamburger {
+            display: none; flex-direction: column; justify-content: center;
+            gap: 5px; cursor: pointer; padding: 8px; margin-left: auto;
+            z-index: 101; background: none; border: none;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 2px; background: var(--white);
+            border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+            padding: 10rem 2rem 4rem; text-align: center; color: var(--white);
+        }
+        .page-header h1 { font-size: clamp(2rem, 6vw, 3.5rem); color: var(--white); margin-bottom: 1rem; }
+        .page-header .subtitle { font-size: 1.15rem; opacity: 0.9; max-width: 640px; margin: 0 auto; }
+
+        section { padding: clamp(3rem, 8vw, 5rem) 2rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .alt { background: var(--light-gray); }
+
+        .lead { font-size: 1.1rem; color: var(--text-dark); }
+
+        .card-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem; margin-top: 1.5rem;
+        }
+        .card {
+            background: var(--white); padding: 1.5rem; border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;
+        }
+        .card .tag {
+            display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em;
+            text-transform: uppercase; color: var(--accent-gold); margin-bottom: 0.5rem;
+        }
+        .card p { margin-bottom: 0; font-size: 0.95rem; }
+
+        .trip-list { margin-top: 1.5rem; }
+        .trip {
+            display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+            padding: 1rem 0; border-bottom: 1px solid #e5e0d8;
+        }
+        .trip:last-child { border-bottom: none; }
+        .trip .trip-name { font-weight: 600; color: var(--navy); }
+        .trip .trip-desc { color: var(--text-light); font-size: 0.95rem; flex: 1; }
+        .trip .trip-time { white-space: nowrap; color: var(--teal); font-weight: 600; font-size: 0.9rem; }
+
+        .tip-box {
+            background: var(--sand); border-radius: 10px; padding: 1.5rem 1.75rem; margin-top: 1.5rem;
+        }
+        .tip-box p { margin-bottom: 0.5rem; }
+        .tip-box p:last-child { margin-bottom: 0; }
+
+        .cta {
+            background: var(--navy); text-align: center; color: var(--white);
+        }
+        .cta h2 { color: var(--white); }
+        .cta p { color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto 1.5rem; }
+        .btn {
+            display: inline-block; padding: 0.875rem 2rem; background-color: var(--teal);
+            color: white; border-radius: 4px; font-weight: 600; transition: all 0.3s ease;
+        }
+        .btn:hover { background-color: var(--accent-gold); color: white; }
+
+        footer {
+            background: var(--navy); padding: 2.5rem 2rem; text-align: center;
+        }
+        footer a { color: var(--sand); }
+        footer a:hover { color: var(--white); }
+        footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .logo img { height: 80px; }
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 70%;
+                background: var(--navy); flex-direction: column; justify-content: center;
+                gap: 1.5rem; transition: right 0.3s ease; padding: 2rem;
+            }
+            .nav-links.open { right: 0; }
+            .trip { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo-white.png" alt="Magnolia By The Sea" />
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="photos.html">Gallery</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#calendar">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Indian Rocks Beach Vacation Guide</h1>
+        <p class="subtitle">What to do, where to eat, and when to visit, from the hosts of Magnolia By The Sea. Updated July 2026.</p>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Why Indian Rocks Beach</h2>
+            <p class="lead">Indian Rocks Beach is what Florida's Gulf Coast looked like before the high-rises: a 2.7-mile barrier-island town of about 4,000 residents, 25 numbered avenues of low-rise cottages and beach homes, and white Gulf sand at the end of nearly every street. No resort wall, no spring-break crowds, and sunsets over the water every single night.</p>
+            <p>It's also freshly rebuilt. The 2025-26 Pinellas County beach renourishment project placed over 2.5 million cubic yards of new sand along this stretch of coast, finishing in early 2026, so the beach is wide and healthy. And IRB is a genuine golf cart town: carts are street-legal, the beach accesses have designated golf-cart-only parking, and most of daily life (beach, dinner, ice cream, bait shop) happens within a five-minute cart ride.</p>
+            <p>The town sits in the middle of everything: Clearwater is about 10 minutes north, John's Pass 15 minutes south, and downtown St. Petersburg and Tampa International Airport roughly 30 minutes away.</p>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2>The Beach</h2>
+            <p>Public access walkways sit at the end of nearly every numbered avenue off Gulf Boulevard. The main facility is the county's Indian Rocks Beach Access Park at 1700 Gulf Blvd (17th Avenue), the only access with restrooms and outdoor showers. From Magnolia By The Sea, the sand is about an 8-minute walk or 2 minutes by golf cart.</p>
+            <div class="tip-box">
+                <p><strong>Good to know for 2026:</strong> IRB began a paid-parking program in May 2026: non-resident car parking at beach accesses is $4.50/hour via the ParkMobile app, enforced daily 8 AM to 10 PM. Golf carts park free in the designated cart spaces, which makes staying at a home with its own parking and an included cart a real advantage.</p>
+                <p><strong>Beach rules:</strong> no dogs on the sand (there's a free leash-free dog park at the IRB Nature Preserve instead), no alcohol or glass on the beach, no fires or fireworks. During sea turtle nesting season (May through October), fill in holes, flatten sandcastles, take everything off the beach at night, and skip white flashlights after dark.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Getting Around: The Golf Cart Life</h2>
+            <p>The golf cart is the soul of IRB, and one comes free with every stay at Magnolia By The Sea (6-passenger). Carts are street-legal on city streets, and locals use them for everything: beach runs, dinner, coffee, groceries at the little markets. As of a June 2026 city ordinance, drivers must be 18 or older or hold a valid license or learner's permit.</p>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2>Where to Eat &amp; Drink</h2>
+            <p>Almost all of these are a golf cart ride from anywhere in IRB.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="tag">Seafood Institution</span>
+                    <h3>Keegan's Seafood Grille</h3>
+                    <p>An IRB fixture since 1985 and a Food Network alum. Order the grouper (sandwich or dinner) and the smoked fish spread. 1519 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">The Landmark</span>
+                    <h3>The Original Crabby Bill's</h3>
+                    <p>The 1983 original of the famous Florida seafood family. Casual, loud, live music, stone crab in season. 401 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Upscale Casual</span>
+                    <h3>Guppy's on the Beach</h3>
+                    <p>Fresh local fish done right: Gulf grouper piccata, Florida lobster tail. Across from the 17th Ave beach access, with a popular early-bird menu. 1701 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Lobster Rolls</span>
+                    <h3>Monstah Lobstah &amp; JD's Back Porch</h3>
+                    <p>New England-style lobster rolls, chowder, and a raw bar from the Crabby Bill's family, in the old JD's landmark. 125 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Beach Bar</span>
+                    <h3>Coco's Crush Bar</h3>
+                    <p>Home of the Orange Crush cocktail, with Maryland-style crab, brunch, trivia Tuesdays, and live music several nights a week. 2405 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Margaritas</span>
+                    <h3>VIP Mexican American Cuisine</h3>
+                    <p>Casual cantina from the family behind the decades-old VIP Lounge on St. Pete Beach. Big margaritas. 213 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Special Occasion</span>
+                    <h3>Salt Rock Grill</h3>
+                    <p>Aged steaks and fresh fish over an oak pit grill on the Intracoastal, just south in Indian Shores. The area's celebration spot. 19325 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Waterfront Deck</span>
+                    <h3>Caddy's Indian Shores</h3>
+                    <p>Waterfront deck on the Intracoastal with live music and boat-up dining, a short ride south of IRB. 20025 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Coffee &amp; Breakfast</span>
+                    <h3>Grove Surf Cafe</h3>
+                    <p>Surf-shop cafe with avocado toast, hash brown bowls, in-house pastries, and a toasted coconut latte worth the trip. 1309 Gulf Blvd.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Ice Cream</span>
+                    <h3>Tropical Ice Cream &amp; Coffee</h3>
+                    <p>The classic post-beach stop: ice cream and coffee under one roof. 435 Gulf Blvd.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Things to Do</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="tag">On the Water</span>
+                    <h3>Fish &amp; Kayak the Intracoastal</h3>
+                    <p>The calm side of the island is the playground: fish off a dock (guests at Magnolia fish right off ours), paddle the mangrove flats, and keep an eye out for dolphins. Indian Rocks Tackle &amp; Dive at 1301 Gulf Blvd has bait and gear; inshore and offshore charters run out of IRB.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">For the Kids</span>
+                    <h3>Splash Harbour Water Park</h3>
+                    <p>Two 42-foot slides, a 600-foot lazy river, and a kids' splash zone right in IRB at 399 2nd St. Weather permitting, roughly 10 AM to 6 PM.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Nature</span>
+                    <h3>IRB Nature Preserve &amp; Parks</h3>
+                    <p>A shaded mangrove boardwalk on Gulf Blvd (plus the town's leash-free dog park). Kolb Park has tennis, playgrounds, and a skate park; Brown Park is great for picnics.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Local History</span>
+                    <h3>Indian Rocks Historical Museum</h3>
+                    <p>Small and charming, with a new exhibit on how storms and renourishment shaped these barrier islands. Wed-Sat, 10 AM to 2 PM. 203 4th Ave.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Nightly Ritual</span>
+                    <h3>Sunset</h3>
+                    <p>The whole town faces west. Grab a spot on the sand, a beachfront bar, or (if you're staying with us) the rooftop deck, and don't miss it.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Rentals</span>
+                    <h3>Boards, Bikes &amp; Boats</h3>
+                    <p>Nekton Surf Shop rents boards, kayaks, and bikes; Island Marine Rentals handles kayaks and boats if you want to explore further.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt">
+        <div class="container">
+            <h2>Day Trips</h2>
+            <p>IRB's central Pinellas location makes it a great base. Drive times are approximate.</p>
+            <div class="trip-list">
+                <div class="trip"><span class="trip-name">John's Pass Village</span><span class="trip-desc">Boardwalk shops, dolphin cruises, waterfront dining in Madeira Beach</span><span class="trip-time">15-20 min</span></div>
+                <div class="trip"><span class="trip-name">Clearwater Beach &amp; Pier 60</span><span class="trip-desc">The free Sunsets at Pier 60 festival runs nightly with performers and artisans</span><span class="trip-time">20-35 min</span></div>
+                <div class="trip"><span class="trip-name">Clearwater Marine Aquarium</span><span class="trip-desc">The rescue aquarium made famous by Winter the dolphin</span><span class="trip-time">20-30 min</span></div>
+                <div class="trip"><span class="trip-name">Downtown Dunedin</span><span class="trip-desc">Craft breweries, shops, and the Pinellas Trail</span><span class="trip-time">30-35 min</span></div>
+                <div class="trip"><span class="trip-name">Downtown St. Petersburg</span><span class="trip-desc">St. Pete Pier, the Dal&iacute; Museum, and a serious food scene</span><span class="trip-time">35-45 min</span></div>
+                <div class="trip"><span class="trip-name">Honeymoon &amp; Caladesi Islands</span><span class="trip-desc">Two of Florida's best state park beaches; the Caladesi ferry runs from Honeymoon Island</span><span class="trip-time">35-45 min</span></div>
+                <div class="trip"><span class="trip-name">Tarpon Springs Sponge Docks</span><span class="trip-desc">Greek food and the historic sponge-diving district</span><span class="trip-time">45-55 min</span></div>
+                <div class="trip"><span class="trip-name">Busch Gardens Tampa Bay</span><span class="trip-desc">Coasters and animals, a full-day outing</span><span class="trip-time">50-70 min</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>When to Visit</h2>
+            <p>March through August are the busiest months, with the best weather arriving in October and November: warm Gulf water, low humidity, thinner crowds. The holidays (Thanksgiving, Christmas, New Year's) are special here and often book far in advance. Winters are mild, and a heated pool keeps swimming on the agenda year-round.</p>
+            <p>Gulf water runs roughly from the upper 60s &deg;F in midwinter to the upper 80s in late summer, comfortably swimmable from about March through December. Summer afternoons bring quick-passing thunderstorms; hurricane season runs June through November with its statistical peak from mid-August to October, so consider flexible booking and travel insurance for late-summer trips.</p>
+            <div class="tip-box">
+                <p><strong>Local tips:</strong> Check current water conditions at FWC's red tide status page before you swim. The Taste of IRB festival (April) and the Indian Shores Sunday Morning Market are worth planning around. A Publix is 5 minutes away by car; Walmart and Target are within 10.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Stay in the Middle of It All</h2>
+            <p>Magnolia By The Sea is a waterfront home on the Intracoastal in Indian Rocks Beach: 4 bedrooms, 3 baths, sleeps 10, with a heated saltwater pool, private dock with kayaks, rooftop deck, and a free 6-passenger golf cart. Rated 5.0 stars across 73+ guest reviews.</p>
+            <a class="btn" href="index.html#calendar">Check Availability</a>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Magnolia By The Sea</a></p>
+        <p style="margin-top: 0.75rem;">&copy; 2026 Magnolia By The Sea. Indian Rocks Beach, Florida.</p>
+    </footer>
+
+    <script>
+    (function() {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        }));
+    })();
+    </script>
+</body>
+</html>
