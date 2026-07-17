@@ -995,6 +995,96 @@
             margin-bottom: 0;
         }
 
+        /* Offers Section */
+        .offers {
+            background: var(--sand);
+        }
+
+        .offers h2 {
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .offers-intro {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .offer-card {
+            background: var(--white);
+            border-radius: 12px;
+            border-top: 4px solid var(--accent-gold);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(27, 58, 92, 0.08);
+        }
+
+        .offer-eyebrow {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .offer-card h3 {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            margin-bottom: 1rem;
+        }
+
+        .offer-card .offer-desc {
+            max-width: 560px;
+            margin: 0 auto 1.75rem;
+        }
+
+        .offer-code-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.15rem;
+            background: var(--light-gray);
+            border: 2px dashed var(--teal);
+            border-radius: 8px;
+            padding: 0.85rem 2rem;
+            margin-bottom: 1.25rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .offer-code-box:hover {
+            background: #eef7f7;
+        }
+
+        .offer-code {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--navy);
+        }
+
+        .offer-copy-hint {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .offer-cta-row {
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-terms {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
         /* Calendar Section */
         .calendar {
             background: var(--light-gray);
@@ -1732,6 +1822,7 @@
             <li><a href="reviews.html">Reviews</a></li>
             <li><a href="guide.html">Area Guide</a></li>
             <li><a href="#faq">FAQ</a></li>
+            <li><a href="#offers">Offers</a></li>
             <li><a href="#calendar">Book Now</a></li>
         </ul>
         <div class="nav-spacer nav-spacer-right"></div>
@@ -2150,6 +2241,28 @@
                     <summary>How do I book Magnolia By The Sea?</summary>
                     <p>You can book directly at magnoliabythesea.com using the availability calendar and inquiry form, or through Airbnb at airbnb.com/h/magnolia-by-the-sea, where the home is rated 5.0 stars as a Guest Favorite in the top 10% of homes. The property is professionally managed by Florida Dreamscape Vacation Rentals.</p>
                 </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers" id="offers">
+        <div class="container">
+            <h2>Special Offers</h2>
+            <p class="offers-intro">Book direct and save. Here's what we're offering right now.</p>
+            <div class="offer-card fade-in">
+                <span class="offer-eyebrow">Fall Special &bull; September &ndash; November 2026</span>
+                <h3>Stay 5 Nights, Your 6th Night Is on Us</h3>
+                <p class="offer-desc">Fall is the perfect time for a longer stay. The water is still warm, the beach is quieter, the sunsets get even better, and the rates are lower than peak season. Book 5 nights between September and November, and your 6th night is completely free.</p>
+                <div class="offer-code-box" onclick="copyOfferCode(this, '6THFREE')" title="Click to copy code">
+                    <span class="offer-code">6THFREE</span>
+                    <span class="offer-copy-hint">Click to copy</span>
+                </div>
+                <p class="offer-desc" style="margin-bottom: 1.5rem;">Enter code <strong>6THFREE</strong> in the coupon field when you request your booking, or tap the button below and we'll add it for you.</p>
+                <div class="offer-cta-row">
+                    <button class="btn btn-primary" onclick="applyOfferCode('6THFREE')">Book Your Fall Getaway</button>
+                </div>
+                <p class="offer-terms">Valid for stays September 1 &ndash; November 30, 2026. Excludes Thanksgiving week (November 22&ndash;28). Minimum 5-night stay. New reservations only. Cannot be combined with other offers or discounts.</p>
             </div>
         </div>
     </section>
@@ -2583,6 +2696,30 @@
         }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        /* ── Offers: copy code + prefill booking form ── */
+        function copyOfferCode(box, code) {
+            const hint = box.querySelector('.offer-copy-hint');
+            const setHint = (text) => {
+                if (!hint) return;
+                hint.textContent = text;
+                setTimeout(() => { hint.textContent = 'Click to copy'; }, 2000);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(
+                    () => setHint('Copied!'),
+                    () => setHint(code)
+                );
+            } else {
+                setHint(code);
+            }
+        }
+
+        function applyOfferCode(code) {
+            const couponInput = document.querySelector('input[name="coupon-code"]');
+            if (couponInput) couponInput.value = code;
+            document.getElementById('calendar').scrollIntoView({ behavior: 'smooth' });
+        }
 
         /* ── Calendar + Booking Form Logic ── */
         let bookedDates = new Set();
