@@ -12,6 +12,12 @@
   status = 301
   force = true
 
+# Clean URL for the offers page (magnoliabythesea.com/offers)
+[[redirects]]
+  from = "/offers"
+  to = "/offers.html"
+  status = 200
+
 # Cache static assets
 [[headers]]
   for = "/photos/*"
