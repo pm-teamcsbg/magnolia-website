@@ -32,68 +32,167 @@
     <!-- Structured Data for Google -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "VacationRental",
-      "@id": "https://magnoliabythesea.com/#property",
-      "name": "Magnolia By The Sea",
-      "alternateName": "Magnolia By The Sea at Indian Rocks Beach",
-      "description": "Waterfront luxury vacation rental on the Intracoastal Waterway in Indian Rocks Beach, Florida. 4 bedrooms, 3 bathrooms, heated saltwater pool, private dock, 2 kayaks, rooftop deck, and included 6-passenger golf cart.",
-      "url": "https://magnoliabythesea.com",
-      "sameAs": [
-        "https://airbnb.com/h/magnolia-by-the-sea",
-        "https://www.floridadreamscapevacationrentals.com/magnolia-by-the-sea-orp5b65bbcx"
-      ],
-      "telephone": "+1-727-254-2022",
-      "identifier": {
-        "@type": "PropertyValue",
-        "name": "BTR Registration",
-        "value": "2302"
+  "@context": "https://schema.org",
+  "@type": "VacationRental",
+  "@id": "https://magnoliabythesea.com/#property",
+  "name": "Magnolia By The Sea",
+  "alternateName": "Magnolia By The Sea at Indian Rocks Beach",
+  "description": "Waterfront luxury vacation rental on the Intracoastal Waterway in Indian Rocks Beach, Florida. 4 bedrooms, 3 bathrooms, heated saltwater pool, private dock, 2 kayaks, rooftop deck, and included 6-passenger golf cart.",
+  "url": "https://magnoliabythesea.com",
+  "sameAs": [
+    "https://airbnb.com/h/magnolia-by-the-sea",
+    "https://www.floridadreamscapevacationrentals.com/magnolia-by-the-sea-orp5b65bbcx"
+  ],
+  "telephone": "+1-727-254-2022",
+  "identifier": "BTR-2302",
+  "checkinTime": "16:00",
+  "checkoutTime": "10:00",
+  "image": [
+    "https://magnoliabythesea.com/photos/gallery/full/02.jpg",
+    "https://magnoliabythesea.com/photos/gallery/full/01.jpg",
+    "https://magnoliabythesea.com/photos/gallery/full/03.jpg",
+    "https://magnoliabythesea.com/photos/gallery/full/23.jpg",
+    "https://magnoliabythesea.com/photos/gallery/full/04.jpg",
+    "https://magnoliabythesea.com/photos/gallery/full/05.jpg",
+    "https://magnoliabythesea.com/photos/gallery/full/06.jpg",
+    "https://magnoliabythesea.com/photos/gallery/full/07.jpg"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Indian Rocks Beach",
+    "addressRegion": "FL",
+    "addressCountry": "US",
+    "postalCode": "33785"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 27.887,
+    "longitude": -82.855
+  },
+  "numberOfRooms": 4,
+  "numberOfBathroomsTotal": 3,
+  "occupancy": {
+    "@type": "QuantitativeValue",
+    "maxValue": 10
+  },
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Heated Saltwater Pool",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Private Dock",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "2 Kayaks",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "6-Passenger Golf Cart",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Rooftop Deck",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Tesla EV Charger",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "1Gbps WiFi",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Nespresso Machine",
+      "value": true
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "56",
+    "bestRating": "5"
+  },
+  "petsAllowed": false,
+  "smokingAllowed": false,
+  "containsPlace": {
+    "@type": "Accommodation",
+    "additionalType": "EntirePlace",
+    "bed": [
+      {
+        "@type": "BedDetails",
+        "numberOfBeds": 3,
+        "typeOfBed": "King"
       },
-      "checkinTime": "16:00",
-      "checkoutTime": "10:00",
-      "image": [
-        "https://magnoliabythesea.com/photos/gallery/full/02.jpg",
-        "https://magnoliabythesea.com/photos/gallery/full/01.jpg",
-        "https://magnoliabythesea.com/photos/gallery/full/03.jpg",
-        "https://magnoliabythesea.com/photos/gallery/full/23.jpg",
-        "https://magnoliabythesea.com/photos/gallery/full/04.jpg"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Indian Rocks Beach",
-        "addressRegion": "FL",
-        "addressCountry": "US"
+      {
+        "@type": "BedDetails",
+        "numberOfBeds": 4,
+        "typeOfBed": "Bunk"
+      }
+    ],
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "value": 10
+    },
+    "numberOfBedrooms": 4,
+    "numberOfBathroomsTotal": 3
+  },
+  "additionalType": "House",
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Amanda K."
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 27.887,
-        "longitude": -82.855
-      },
-      "numberOfRooms": 4,
-      "numberOfBathroomsTotal": 3,
-      "occupancy": {
-        "@type": "QuantitativeValue",
-        "maxValue": 10
-      },
-      "amenityFeature": [
-        {"@type": "LocationFeatureSpecification", "name": "Heated Saltwater Pool", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Private Dock", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "2 Kayaks", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "6-Passenger Golf Cart", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Rooftop Deck", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Tesla EV Charger", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "1Gbps WiFi", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Nespresso Machine", "value": true}
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "56",
+      "datePublished": "2026-04",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
         "bestRating": "5"
       },
-      "petsAllowed": false,
-      "smokingAllowed": false
+      "reviewBody": "Just perfect! We had a wonderful stay, the house is right on the water, with a usable dock and beautiful pool. We caught bonito and sea trout right off the dock, plus dolphins swimming by the house day and night. We even had a visit from a friendly manatee!"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Natasha"
+      },
+      "datePublished": "2026-06",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "This house is absolutely stunning. Perfect location and fit us all very comfortably. Golf cart was a great feature to be able to get to local spots. Pool was the highlight for us. We would stay here again - highly recommended!"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Dan"
+      },
+      "datePublished": "2026-05",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Amazing stay at this beautiful house. The house is spotless, and you can tell there's been a lot of thought into the little touches. Beds are MEGA comfy! A truly fantastic property."
     }
+  ]
+}
     </script>
 
     <!-- Structured Data: FAQ -->
