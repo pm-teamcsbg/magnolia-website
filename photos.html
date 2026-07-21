@@ -267,7 +267,7 @@
         <button class="filter-btn" data-filter="living">Living Areas</button>
         <button class="filter-btn" data-filter="kitchen">Kitchen</button>
         <button class="filter-btn" data-filter="backyard">Backyard</button>
-        <button class="filter-btn" data-filter="oceanfront-balcony-room">Oceanfront Balcony Room</button>
+        <button class="filter-btn" data-filter="waterfront-balcony-room">Waterfront Balcony Room</button>
         <button class="filter-btn" data-filter="poolside-room">Poolside Room</button>
         <button class="filter-btn" data-filter="private-retreat">Private Retreat</button>
         <button class="filter-btn" data-filter="bunk-haven">Bunk Haven</button>
@@ -307,7 +307,7 @@
 <script>
 /* ── Photo Data ── */
 const photos = [
-    {"id": "01", "cat": ["living", "exterior"], "label": "Living Room Overview", "desc": "For the rare moments you are inside, settle into a cozy slipcover sofa as you gaze at the ocean."},
+    {"id": "01", "cat": ["living", "exterior"], "label": "Living Room Overview", "desc": "For the rare moments you are inside, settle into a cozy slipcover sofa as you gaze at the water."},
     {"id": "02", "cat": ["pool", "exterior", "backyard"], "label": "Pool & House at Dusk", "desc": "A dip in the pool at sunset can be one of the most enjoyable memories while visiting Magnolia By The Sea."},
     {"id": "03", "cat": ["rooftop", "backyard", "exterior"], "label": "Rooftop Deck Sunset", "desc": "Champagne, cheese plate, and sunsets from the rooftop deck? Yes please!"},
     {"id": "04", "cat": ["golf-cart", "exterior"], "label": "House Front & Golf Cart", "desc": "The retro home elevation invites you in, and the included golf cart whisks you away."},
@@ -328,8 +328,8 @@ const photos = [
     {"id": "19", "cat": ["living", "dining"], "label": "Entry Foyer", "desc": "Step into the home, drop your suitcases, and take the golf cart to the beach!"},
     {"id": "20", "cat": ["beach", "neighborhood"], "label": "Beach Sunset", "desc": "This white sand beach is only 2 minutes away, using the provided golf cart."},
     {"id": "21", "cat": ["poolside-room"], "label": "Poolside Room King Bed", "desc": "Take your first nap of the trip by walking up the stairs and jumping into the king bed."},
-    {"id": "22", "cat": ["backyard", "dock", "oceanfront-balcony-room", "exterior"], "label": "Waterfront Seating", "desc": ". . . and incorporates a nice seating area for your morning coffee."},
-    {"id": "23", "cat": ["oceanfront-balcony-room"], "label": "Oceanfront Balcony Room", "desc": "There's plenty of room to spread out and find relaxation."},
+    {"id": "22", "cat": ["backyard", "dock", "waterfront-balcony-room", "exterior"], "label": "Waterfront Seating", "desc": ". . . and incorporates a nice seating area for your morning coffee."},
+    {"id": "23", "cat": ["waterfront-balcony-room"], "label": "Waterfront Balcony Room", "desc": "There's plenty of room to spread out and find relaxation."},
     {"id": "24", "cat": ["private-retreat"], "label": "Private Retreat", "desc": "The hardest part will be choosing which room you want to stay in."},
     {"id": "25", "cat": ["private-retreat"], "label": "Private Retreat View", "desc": "The front upstairs master has a vaulted ceiling and easy access to the bathroom."},
     {"id": "26", "cat": ["poolside-room"], "label": "Poolside Room", "desc": "The downstairs master has patio doors that lead right out to the resort-style backyard."},
@@ -340,7 +340,7 @@ const photos = [
     {"id": "31", "cat": ["bathroom"], "label": "Double Vanity Bath", "desc": "The upstairs bathroom sits between the 2 upstairs bedrooms. It has two vanities and a walk-in shower."},
     {"id": "68", "cat": ["bathroom"], "label": "Upstairs Bathroom", "desc": "Another view of the upstairs full bathroom."},
     {"id": "69", "cat": ["bathroom"], "label": "Bathroom Toilet Area", "desc": ". . . and a separate toilet area for extra privacy."},
-    {"id": "32", "cat": ["bathroom"], "label": "Blue Tile Bath", "desc": "Downstairs, between one of the oceanfront king rooms and the bunk room, is the 3rd bathroom. It has a tub/shower combination in case anyone wants a bath!"},
+    {"id": "32", "cat": ["bathroom"], "label": "Blue Tile Bath", "desc": "Downstairs, between one of the waterfront king rooms and the bunk room, is the 3rd bathroom. It has a tub/shower combination in case anyone wants a bath!"},
     {"id": "33", "cat": ["neighborhood"], "label": "VIP Marina Bar", "desc": "Beach trips equal margaritas. VIP Mexican is only 5 minutes away and has some of the best 'ritas in the world."},
     {"id": "34", "cat": ["backyard", "exterior", "rooftop"], "label": "Rooftop Dining", "desc": "Grab some fruit, cheese, Italian meats, and wine from a local shop and dinner is served."},
     {"id": "35", "cat": ["backyard", "dock", "exterior"], "label": "Rooftop Fire Pit", "desc": ". . . or grab a chair, light the fire, and enjoy the colors in the sky next to the crackle of flames."},
@@ -351,9 +351,9 @@ const photos = [
     {"id": "40", "cat": ["pool", "backyard", "dock", "exterior"], "label": "Pool Sun Shelf", "desc": "The sun shelf is perfect for cooling off without getting your hair wet."},
     {"id": "41", "cat": ["neighborhood"], "label": "Caddy's Restaurant", "desc": "By boat or by car, Caddy's is always at the top of the places to eat when on the island."},
     {"id": "42", "cat": ["backyard", "dining", "exterior"], "label": "Covered Outdoor Dining", "desc": "Since the outdoor dining area is covered, you can use it any time and in any weather."},
-    {"id": "43", "cat": ["dock"], "label": "Dock Fishing Chair", "desc": "Is there anything better than casting a line, drinking a cold beer, and feeling the ocean breeze?"},
+    {"id": "43", "cat": ["dock"], "label": "Dock Fishing Chair", "desc": "Is there anything better than casting a line, drinking a cold beer, and feeling the salt breeze?"},
     {"id": "44", "cat": ["dock"], "label": "Kayak Launch", "desc": "Launching a kayak is even easier with the kayak launch attached to the dock."},
-    {"id": "45", "cat": ["backyard", "pool", "exterior", "dock"], "label": "Kayaks by Pool", "desc": "The huge side yard gives you lots of extra space, and the 2 kayaks are there when you're ready to explore the ocean waters right off your backyard!"},
+    {"id": "45", "cat": ["backyard", "pool", "exterior", "dock"], "label": "Kayaks by Pool", "desc": "The huge side yard gives you lots of extra space, and the 2 kayaks are there when you're ready to explore the Intracoastal waters right off your backyard!"},
     {"id": "46", "cat": ["neighborhood", "exterior", "dock", "pool"], "label": "Aerial Waterfront", "desc": "'The island life is the life for me.' – Everyone"},
     {"id": "47", "cat": ["neighborhood"], "label": "Clearwater Aquarium", "desc": "Clearwater Marine Aquarium, home of 'Winter' and 'Hope', is only minutes away."},
     {"id": "48", "cat": ["dock", "pool", "backyard", "exterior"], "label": "Pool & Dock Twilight", "desc": "The prettiest view of the property is from the rooftop deck looking down at twilight."},
@@ -364,9 +364,9 @@ const photos = [
     {"id": "53", "cat": ["kitchen", "dining"], "label": "Kitchen & Dining", "desc": ". . . and the proximity to the dining area means everyone can spend time together."},
     {"id": "54", "cat": ["neighborhood"], "label": "Downtown Dunedin", "desc": "For those who enjoy microbreweries, great food and shops, take an excursion to the fun little town of Dunedin."},
     {"id": "55", "cat": ["living"], "label": "Entry & Staircase", "desc": "Stylish, coastal touches greet you from the moment you walk in the door."},
-    {"id": "56", "cat": ["living", "oceanfront-balcony-room"], "label": "Oceanfront Balcony Room", "desc": "The oceanfront upstairs master bedroom features an ocean view, luscious king bed, and a private balcony."},
-    {"id": "57", "cat": ["oceanfront-balcony-room"], "label": "Oceanfront Sitting Area", "desc": "The upstairs oceanfront master is strategically located right off the living room."},
-    {"id": "58", "cat": ["backyard", "rooftop", "oceanfront-balcony-room", "exterior"], "label": "Oceanfront Balcony", "desc": "With clear views of the intracoastal and a stair leading up to the rooftop deck."},
+    {"id": "56", "cat": ["living", "waterfront-balcony-room"], "label": "Waterfront Balcony Room", "desc": "The waterfront upstairs master bedroom has water views, a luscious king bed, and a private balcony overlooking the Intracoastal."},
+    {"id": "57", "cat": ["waterfront-balcony-room"], "label": "Waterfront Sitting Area", "desc": "The upstairs waterfront master is located right off the living room."},
+    {"id": "58", "cat": ["backyard", "rooftop", "waterfront-balcony-room", "exterior"], "label": "Waterfront Balcony", "desc": "With clear views of the intracoastal and a stair leading up to the rooftop deck."},
     {"id": "59", "cat": ["private-retreat"], "label": "Private Retreat TV", "desc": "Each room has a brand new Samsung Smart TV. This room has ensuite access to the upstairs bathroom."},
     {"id": "60", "cat": ["private-retreat"], "label": "Private Retreat", "desc": "The 2nd upstairs master features a luxurious king bed and plenty of room for your suitcases and snorkeling gear."},
     {"id": "61", "cat": ["poolside-room"], "label": "Poolside Room", "desc": "The downstairs master has a comfortable king bed for any of your family or friends."},
@@ -397,8 +397,8 @@ const photos = [
     {"id": "88", "cat": ["neighborhood"], "label": "Busch Gardens", "desc": "Feeling adventurous? Take a day and visit Busch Gardens, which is a huge amusement park with both rollercoasters and lots of animals to see and interact with."},
     {"id": "89", "cat": ["neighborhood", "exterior"], "label": "Waterfront Aerial", "desc": "Magnolia By The Sea is really by the sea."},
     {"id": "90", "cat": ["neighborhood", "exterior"], "label": "Aerial Neighborhood", "desc": "Huge open water views make a huge difference."},
-    {"id": "main-floor", "cat": ["floor-plan", "living", "bathroom", "oceanfront-balcony-room", "private-retreat", "bunk-haven", "poolside-room", "laundry", "kitchen", "dining"], "label": "Main Floor Plan", "desc": "The main floor layout is open and all of the bedrooms are easy to access, no matter where you are."},
-    {"id": "upstairs-floor", "cat": ["floor-plan", "living", "bathroom", "oceanfront-balcony-room", "private-retreat"], "label": "Upstairs Floor Plan", "desc": "The upstairs retreat features 2 master king bedrooms with a large bathroom shared by both."}
+    {"id": "main-floor", "cat": ["floor-plan", "living", "bathroom", "waterfront-balcony-room", "private-retreat", "bunk-haven", "poolside-room", "laundry", "kitchen", "dining"], "label": "Main Floor Plan", "desc": "The main floor layout is open and all of the bedrooms are easy to access, no matter where you are."},
+    {"id": "upstairs-floor", "cat": ["floor-plan", "living", "bathroom", "waterfront-balcony-room", "private-retreat"], "label": "Upstairs Floor Plan", "desc": "The upstairs retreat features 2 master king bedrooms with a large bathroom shared by both."}
 ]
 
 /* ── Build Gallery ── */
