@@ -36,6 +36,7 @@
       "@type": "VacationRental",
       "@id": "https://magnoliabythesea.com/#property",
       "name": "Magnolia By The Sea",
+      "alternateName": "Magnolia By The Sea at Indian Rocks Beach",
       "description": "Waterfront luxury vacation rental on the Intracoastal Waterway in Indian Rocks Beach, Florida. 4 bedrooms, 3 bathrooms, heated saltwater pool, private dock, 2 kayaks, rooftop deck, and included 6-passenger golf cart.",
       "url": "https://magnoliabythesea.com",
       "sameAs": [
@@ -162,7 +163,7 @@
       "name": "How many guests does the house sleep?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The home sleeps up to 10 guests across 4 bedrooms and 3 bathrooms: three king bedrooms (Oceanfront Balcony Room, Poolside Room, and Private Retreat) plus Bunk Haven, which has four custom built-in Twin XL bunks with USB outlets and personal reading lights. Great fit for two families or a multigenerational group."
+        "text": "The home sleeps up to 10 guests across 4 bedrooms and 3 bathrooms: three king bedrooms (Waterfront Balcony Room, Poolside Room, and Private Retreat) plus Bunk Haven, which has four custom built-in Twin XL bunks with USB outlets and personal reading lights. Great fit for two families or a multigenerational group."
       }
     },
     {
@@ -602,6 +603,8 @@
             color: var(--sand);
             margin-bottom: 2rem;
             font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
         }
 
         .hero .cta-button {
@@ -1745,7 +1748,7 @@
     <section class="hero" id="hero">
         <div class="hero-content">
             <img src="logo-hero.png" alt="Magnolia By The Sea" class="hero-logo" />
-            <p class="subtitle">Waterfront luxury on Indian Rocks Beach</p>
+            <h1 class="subtitle">Waterfront Vacation Rental in Indian Rocks Beach, Florida</h1>
             <button class="btn btn-outline cta-button" onclick="document.getElementById('calendar').scrollIntoView({behavior: 'smooth'})">Check Availability</button>
         </div>
         <div class="hero-stats">
@@ -1880,9 +1883,9 @@
             <h2>Sleeping Quarters</h2>
             <div class="bedroom-grid">
                 <div class="bedroom-card fade-in" onclick="openLightbox(oceanfrontBalconyPhotos, 0)">
-                    <img src="photos/gallery/thumbs/23.jpg" alt="Oceanfront Balcony Room" class="bedroom-image" loading="lazy">
+                    <img src="photos/gallery/thumbs/23.jpg" alt="Waterfront Balcony Room" class="bedroom-image" loading="lazy">
                     <div class="bedroom-content">
-                        <h3>Oceanfront Balcony Room</h3>
+                        <h3>Waterfront Balcony Room</h3>
                         <div class="bedroom-details">
                             <strong>King Bed</strong>
                             <p>Ocean view, luscious king bed, and a private balcony with stairs up to the rooftop deck. Your personal sunrise sanctuary.</p>
@@ -2089,7 +2092,7 @@
                 </details>
                 <details class="faq-item">
                     <summary>How many guests does the house sleep?</summary>
-                    <p>The home sleeps up to 10 guests across 4 bedrooms and 3 bathrooms: three king bedrooms (Oceanfront Balcony Room, Poolside Room, and Private Retreat) plus Bunk Haven, which has four custom built-in Twin XL bunks with USB outlets and personal reading lights. Great fit for two families or a multigenerational group.</p>
+                    <p>The home sleeps up to 10 guests across 4 bedrooms and 3 bathrooms: three king bedrooms (Waterfront Balcony Room, Poolside Room, and Private Retreat) plus Bunk Haven, which has four custom built-in Twin XL bunks with USB outlets and personal reading lights. Great fit for two families or a multigenerational group.</p>
                 </details>
                 <details class="faq-item">
                     <summary>Is Indian Rocks Beach good for families?</summary>
@@ -2375,16 +2378,16 @@
         {src:'photos/gallery/full/01.jpg', label:'Living Room Overview', desc:'For the rare moments you are inside, settle into a cozy slipcover sofa as you gaze at the ocean.'},
         {src:'photos/gallery/full/03.jpg', label:'Rooftop Deck Sunset', desc:'Champagne, cheese plate, and sunsets from the rooftop deck? Yes please!'},
         {src:'photos/gallery/full/08.jpg', label:'Dining Room', desc:'As you walk into the home, you\'ll find the inviting dining area and immediate views of the water.'},
-        {src:'photos/gallery/full/23.jpg', label:'Oceanfront Balcony Room', desc:'There\'s plenty of room to spread out and find relaxation.'},
+        {src:'photos/gallery/full/23.jpg', label:'Waterfront Balcony Room', desc:'There\'s plenty of room to spread out and find relaxation.'},
         {src:'photos/gallery/full/04.jpg', label:'House Front & Golf Cart', desc:'The retro home elevation invites you in, and the included golf cart whisks you away.'}
     ];
 
     const oceanfrontBalconyPhotos = [
-        {src:'photos/gallery/full/23.jpg', label:'Oceanfront Balcony Room', desc:'There\'s plenty of room to spread out and find relaxation.'},
-        {src:'photos/gallery/full/56.jpg', label:'Oceanfront Balcony Room', desc:'The oceanfront upstairs master bedroom features an ocean view, luscious king bed, and a private balcony.'},
-        {src:'photos/gallery/full/57.jpg', label:'Oceanfront Sitting Area', desc:'The upstairs oceanfront master is strategically located right off the living room.'},
+        {src:'photos/gallery/full/23.jpg', label:'Waterfront Balcony Room', desc:'There\'s plenty of room to spread out and find relaxation.'},
+        {src:'photos/gallery/full/56.jpg', label:'Waterfront Balcony Room', desc:'The waterfront upstairs master bedroom has water views, a luscious king bed, and a private balcony overlooking the Intracoastal.'},
+        {src:'photos/gallery/full/57.jpg', label:'Waterfront Sitting Area', desc:'The upstairs waterfront master is located right off the living room.'},
         {src:'photos/gallery/full/22.jpg', label:'Waterfront Seating', desc:'. . . and incorporates a nice seating area for your morning coffee.'},
-        {src:'photos/gallery/full/58.jpg', label:'Oceanfront Balcony', desc:'With clear views of the intracoastal and a stair leading up to the rooftop deck.'}
+        {src:'photos/gallery/full/58.jpg', label:'Waterfront Balcony', desc:'With clear views of the intracoastal and a stair leading up to the rooftop deck.'}
     ];
 
     const poolsideRoomPhotos = [
@@ -2449,7 +2452,7 @@
     const rooftopPhotos = [
         {src:'photos/gallery/full/03.jpg', label:'Rooftop Deck Sunset', desc:'Champagne, cheese plate, and sunsets from the rooftop deck? Yes please!'},
         {src:'photos/gallery/full/34.jpg', label:'Rooftop Dining', desc:'Grab some fruit, cheese, Italian meats, and wine from a local shop and dinner is served.'},
-        {src:'photos/gallery/full/58.jpg', label:'Oceanfront Balcony', desc:'With clear views of the intracoastal and a stair leading up to the rooftop deck.'},
+        {src:'photos/gallery/full/58.jpg', label:'Waterfront Balcony', desc:'With clear views of the intracoastal and a stair leading up to the rooftop deck.'},
         {src:'photos/gallery/full/87.jpg', label:'Rooftop Sunset', desc:'Enjoy both sunrises and sunset from the rooftop deck . . .'}
     ];
 
