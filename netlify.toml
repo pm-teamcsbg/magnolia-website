@@ -1,4 +1,5 @@
 [build]
+  command = "bash scripts/indexnow-ping.sh || true"
   publish = "."
   functions = "netlify/functions"
 
