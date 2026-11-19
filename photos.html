@@ -102,6 +102,8 @@
             transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
+        .gallery-item .gallery-link-full { display: block; width: 100%; height: 100%; }
+        .gallery-item .gallery-link-full:focus-visible { outline: 3px solid #2E8B8B; outline-offset: -3px; }
         .gallery-item img {
             width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.4s ease;
@@ -282,7 +284,560 @@
     </div>
 
     <div class="gallery-container">
-        <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item showing" data-categories="living,exterior" data-index="0">
+                <a class="gallery-link-full" href="photos/gallery/full/01.jpg" aria-label="Open photo: Living Room Overview">
+                    <img src="photos/gallery/thumbs/01.jpg" alt="Living Room Overview" width="400" height="400" loading="eager" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Living Room Overview</span><span class="overlay-desc">For the rare moments you are inside, settle into a cozy slipcover sofa as you gaze at the water.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,exterior,backyard" data-index="1">
+                <a class="gallery-link-full" href="photos/gallery/full/02.jpg" aria-label="Open photo: Pool &amp; House at Dusk">
+                    <img src="photos/gallery/thumbs/02.jpg" alt="Pool &amp; House at Dusk" width="400" height="400" loading="eager" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool &amp; House at Dusk</span><span class="overlay-desc">A dip in the pool at sunset can be one of the most enjoyable memories while visiting Magnolia By The Sea.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="rooftop,backyard,exterior" data-index="2">
+                <a class="gallery-link-full" href="photos/gallery/full/03.jpg" aria-label="Open photo: Rooftop Deck Sunset">
+                    <img src="photos/gallery/thumbs/03.jpg" alt="Rooftop Deck Sunset" width="400" height="400" loading="eager" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Rooftop Deck Sunset</span><span class="overlay-desc">Champagne, cheese plate, and sunsets from the rooftop deck? Yes please!</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="golf-cart,exterior" data-index="3">
+                <a class="gallery-link-full" href="photos/gallery/full/04.jpg" aria-label="Open photo: House Front &amp; Golf Cart">
+                    <img src="photos/gallery/thumbs/04.jpg" alt="House Front &amp; Golf Cart" width="400" height="400" loading="eager" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">House Front &amp; Golf Cart</span><span class="overlay-desc">The retro home elevation invites you in, and the included golf cart whisks you away.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="beach,neighborhood" data-index="4">
+                <a class="gallery-link-full" href="photos/gallery/full/05.jpg" aria-label="Open photo: Beach Access Sign">
+                    <img src="photos/gallery/thumbs/05.jpg" alt="Beach Access Sign" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Beach Access Sign</span><span class="overlay-desc">Top-rated Indian Rocks Beach is only 2 minutes away. &#x27;It&#x27;s our favourite Florida Beach.&#x27; - Steve K.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood,exterior" data-index="5">
+                <a class="gallery-link-full" href="photos/gallery/full/06.jpg" aria-label="Open photo: Aerial Waterfront">
+                    <img src="photos/gallery/thumbs/06.jpg" alt="Aerial Waterfront" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Aerial Waterfront</span><span class="overlay-desc">Expansive waterfront views? Check. Perfect white sand beach? Check. Relaxed island town? Check.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="golf-cart" data-index="6">
+                <a class="gallery-link-full" href="photos/gallery/full/07.jpg" aria-label="Open photo: Golf Cart &amp; Beach Gear">
+                    <img src="photos/gallery/thumbs/07.jpg" alt="Golf Cart &amp; Beach Gear" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Golf Cart &amp; Beach Gear</span><span class="overlay-desc">Included is a 6-passenger golf cart and plenty of beach accessories to help you travel light.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="dining,kitchen" data-index="7">
+                <a class="gallery-link-full" href="photos/gallery/full/08.jpg" aria-label="Open photo: Dining Room">
+                    <img src="photos/gallery/thumbs/08.jpg" alt="Dining Room" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Dining Room</span><span class="overlay-desc">As you walk into the home, you&#x27;ll find the inviting dining area and immediate views of the water.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="8">
+                <a class="gallery-link-full" href="photos/gallery/full/09.jpg" aria-label="Open photo: Coco&#x27;s Crush Bar Patio">
+                    <img src="photos/gallery/thumbs/09.jpg" alt="Coco&#x27;s Crush Bar Patio" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Coco&#x27;s Crush Bar Patio</span><span class="overlay-desc">IRB is home to world-recognized restaurants, including Coco&#x27;s Crush Bar. Just hop on the golf cart and drive right up!</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living,dining" data-index="9">
+                <a class="gallery-link-full" href="photos/gallery/full/10.jpg" aria-label="Open photo: Open Living Space">
+                    <img src="photos/gallery/thumbs/10.jpg" alt="Open Living Space" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Open Living Space</span><span class="overlay-desc">The modern, simple styling creates an open feel and encourages spending time together with friends and family.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="dining" data-index="10">
+                <a class="gallery-link-full" href="photos/gallery/full/11.jpg" aria-label="Open photo: Formal Dining Table">
+                    <img src="photos/gallery/thumbs/11.jpg" alt="Formal Dining Table" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Formal Dining Table</span><span class="overlay-desc">There&#x27;s plenty of room to seat all 10 of your family and friends.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living" data-index="11">
+                <a class="gallery-link-full" href="photos/gallery/full/12.jpg" aria-label="Open photo: Living Room &amp; Beams">
+                    <img src="photos/gallery/thumbs/12.jpg" alt="Living Room &amp; Beams" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Living Room &amp; Beams</span><span class="overlay-desc">The upscale decorating makes this feel like your home away from home.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living" data-index="12">
+                <a class="gallery-link-full" href="photos/gallery/full/13.jpg" aria-label="Open photo: Waterfront Lounge">
+                    <img src="photos/gallery/thumbs/13.jpg" alt="Waterfront Lounge" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Lounge</span><span class="overlay-desc">. . . but you can also grab an adult beverage and spend time with your significant other.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living" data-index="13">
+                <a class="gallery-link-full" href="photos/gallery/full/14.jpg" aria-label="Open photo: Living Room Water View">
+                    <img src="photos/gallery/thumbs/14.jpg" alt="Living Room Water View" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Living Room Water View</span><span class="overlay-desc">Did we mention the floor to ceiling glass wall for the perfect view of the backyard oasis?</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="kitchen" data-index="14">
+                <a class="gallery-link-full" href="photos/gallery/full/15.jpg" aria-label="Open photo: Kitchen &amp; Sink">
+                    <img src="photos/gallery/thumbs/15.jpg" alt="Kitchen &amp; Sink" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Kitchen &amp; Sink</span><span class="overlay-desc">Everything you need can be found in the chef&#x27;s kitchen. . .</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="kitchen" data-index="15">
+                <a class="gallery-link-full" href="photos/gallery/full/16.jpg" aria-label="Open photo: Espresso Machine">
+                    <img src="photos/gallery/thumbs/16.jpg" alt="Espresso Machine" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Espresso Machine</span><span class="overlay-desc">. . . including the most important, the espresso machine.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="kitchen,dining" data-index="16">
+                <a class="gallery-link-full" href="photos/gallery/full/17.jpg" aria-label="Open photo: Kitchen Counter">
+                    <img src="photos/gallery/thumbs/17.jpg" alt="Kitchen Counter" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Kitchen Counter</span><span class="overlay-desc">There&#x27;s plenty of space for more than one cook in the kitchen.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living" data-index="17">
+                <a class="gallery-link-full" href="photos/gallery/full/18.jpg" aria-label="Open photo: Magnolia Sign">
+                    <img src="photos/gallery/thumbs/18.jpg" alt="Magnolia Sign" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Magnolia Sign</span><span class="overlay-desc">We are proud of our cozy abode – and we hope you take a pic next to the sign and share it with us!</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living,dining" data-index="18">
+                <a class="gallery-link-full" href="photos/gallery/full/19.jpg" aria-label="Open photo: Entry Foyer">
+                    <img src="photos/gallery/thumbs/19.jpg" alt="Entry Foyer" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Entry Foyer</span><span class="overlay-desc">Step into the home, drop your suitcases, and take the golf cart to the beach!</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="beach,neighborhood" data-index="19">
+                <a class="gallery-link-full" href="photos/gallery/full/20.jpg" aria-label="Open photo: Beach Sunset">
+                    <img src="photos/gallery/thumbs/20.jpg" alt="Beach Sunset" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Beach Sunset</span><span class="overlay-desc">This white sand beach is only 2 minutes away, using the provided golf cart.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="poolside-room" data-index="20">
+                <a class="gallery-link-full" href="photos/gallery/full/21.jpg" aria-label="Open photo: Poolside Room King Bed">
+                    <img src="photos/gallery/thumbs/21.jpg" alt="Poolside Room King Bed" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Poolside Room King Bed</span><span class="overlay-desc">Take your first nap of the trip by walking up the stairs and jumping into the king bed.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,dock,waterfront-balcony-room,exterior" data-index="21">
+                <a class="gallery-link-full" href="photos/gallery/full/22.jpg" aria-label="Open photo: Waterfront Seating">
+                    <img src="photos/gallery/thumbs/22.jpg" alt="Waterfront Seating" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Seating</span><span class="overlay-desc">. . . and incorporates a nice seating area for your morning coffee.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="waterfront-balcony-room" data-index="22">
+                <a class="gallery-link-full" href="photos/gallery/full/23.jpg" aria-label="Open photo: Waterfront Balcony Room">
+                    <img src="photos/gallery/thumbs/23.jpg" alt="Waterfront Balcony Room" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Balcony Room</span><span class="overlay-desc">There&#x27;s plenty of room to spread out and find relaxation.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="private-retreat" data-index="23">
+                <a class="gallery-link-full" href="photos/gallery/full/24.jpg" aria-label="Open photo: Private Retreat">
+                    <img src="photos/gallery/thumbs/24.jpg" alt="Private Retreat" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Private Retreat</span><span class="overlay-desc">The hardest part will be choosing which room you want to stay in.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="private-retreat" data-index="24">
+                <a class="gallery-link-full" href="photos/gallery/full/25.jpg" aria-label="Open photo: Private Retreat View">
+                    <img src="photos/gallery/thumbs/25.jpg" alt="Private Retreat View" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Private Retreat View</span><span class="overlay-desc">The front upstairs master has a vaulted ceiling and easy access to the bathroom.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="poolside-room" data-index="25">
+                <a class="gallery-link-full" href="photos/gallery/full/26.jpg" aria-label="Open photo: Poolside Room">
+                    <img src="photos/gallery/thumbs/26.jpg" alt="Poolside Room" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Poolside Room</span><span class="overlay-desc">The downstairs master has patio doors that lead right out to the resort-style backyard.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="poolside-room" data-index="26">
+                <a class="gallery-link-full" href="photos/gallery/full/27.jpg" aria-label="Open photo: Poolside Room">
+                    <img src="photos/gallery/thumbs/27.jpg" alt="Poolside Room" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Poolside Room</span><span class="overlay-desc">Sleep with the doors open or closed? Decisions, decisions.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,exterior,poolside-room" data-index="27">
+                <a class="gallery-link-full" href="photos/gallery/full/28.jpg" aria-label="Open photo: Waterfront Deck">
+                    <img src="photos/gallery/thumbs/28.jpg" alt="Waterfront Deck" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Deck</span><span class="overlay-desc">The views from your private patio are second to none, and you don&#x27;t have to walk far to dip your toe in the pool.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bathroom" data-index="28">
+                <a class="gallery-link-full" href="photos/gallery/full/30.jpg" aria-label="Open photo: Walk-In Shower">
+                    <img src="photos/gallery/thumbs/30.jpg" alt="Walk-In Shower" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Walk-In Shower</span><span class="overlay-desc">Right off the foyer and just outside one of the king bedrooms, this modern bathroom features a stylish design and a walk-in shower.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bathroom" data-index="29">
+                <a class="gallery-link-full" href="photos/gallery/full/67.jpg" aria-label="Open photo: Walk-In Shower Detail">
+                    <img src="photos/gallery/thumbs/67.jpg" alt="Walk-In Shower Detail" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Walk-In Shower Detail</span><span class="overlay-desc">A modern, walk-in shower is a great way to clean up after a long day at the beach.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bathroom" data-index="30">
+                <a class="gallery-link-full" href="photos/gallery/full/31.jpg" aria-label="Open photo: Double Vanity Bath">
+                    <img src="photos/gallery/thumbs/31.jpg" alt="Double Vanity Bath" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Double Vanity Bath</span><span class="overlay-desc">The upstairs bathroom sits between the 2 upstairs bedrooms. It has two vanities and a walk-in shower.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bathroom" data-index="31">
+                <a class="gallery-link-full" href="photos/gallery/full/68.jpg" aria-label="Open photo: Upstairs Bathroom">
+                    <img src="photos/gallery/thumbs/68.jpg" alt="Upstairs Bathroom" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Upstairs Bathroom</span><span class="overlay-desc">Another view of the upstairs full bathroom.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bathroom" data-index="32">
+                <a class="gallery-link-full" href="photos/gallery/full/69.jpg" aria-label="Open photo: Bathroom Toilet Area">
+                    <img src="photos/gallery/thumbs/69.jpg" alt="Bathroom Toilet Area" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Bathroom Toilet Area</span><span class="overlay-desc">. . . and a separate toilet area for extra privacy.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bathroom" data-index="33">
+                <a class="gallery-link-full" href="photos/gallery/full/32.jpg" aria-label="Open photo: Blue Tile Bath">
+                    <img src="photos/gallery/thumbs/32.jpg" alt="Blue Tile Bath" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Blue Tile Bath</span><span class="overlay-desc">Downstairs, between one of the waterfront king rooms and the bunk room, is the 3rd bathroom. It has a tub/shower combination in case anyone wants a bath!</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="34">
+                <a class="gallery-link-full" href="photos/gallery/full/33.jpg" aria-label="Open photo: VIP Marina Bar">
+                    <img src="photos/gallery/thumbs/33.jpg" alt="VIP Marina Bar" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">VIP Marina Bar</span><span class="overlay-desc">Beach trips equal margaritas. VIP Mexican is only 5 minutes away and has some of the best &#x27;ritas in the world.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,exterior,rooftop" data-index="35">
+                <a class="gallery-link-full" href="photos/gallery/full/34.jpg" aria-label="Open photo: Rooftop Dining">
+                    <img src="photos/gallery/thumbs/34.jpg" alt="Rooftop Dining" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Rooftop Dining</span><span class="overlay-desc">Grab some fruit, cheese, Italian meats, and wine from a local shop and dinner is served.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,dock,exterior" data-index="36">
+                <a class="gallery-link-full" href="photos/gallery/full/35.jpg" aria-label="Open photo: Waterfront Fire Pit">
+                    <img src="photos/gallery/thumbs/35.jpg" alt="Waterfront Fire Pit" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Fire Pit</span><span class="overlay-desc">. . . or grab a chair, light the fire, and enjoy the colors in the sky next to the crackle of flames.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,exterior,backyard" data-index="37">
+                <a class="gallery-link-full" href="photos/gallery/full/36.jpg" aria-label="Open photo: Pool at Twilight">
+                    <img src="photos/gallery/thumbs/36.jpg" alt="Pool at Twilight" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool at Twilight</span><span class="overlay-desc">Can you picture yourself retiring here each evening?</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,dining,dock,pool" data-index="38">
+                <a class="gallery-link-full" href="photos/gallery/full/37.jpg" aria-label="Open photo: Waterfront Table">
+                    <img src="photos/gallery/thumbs/37.jpg" alt="Waterfront Table" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Table</span><span class="overlay-desc">Grabbing a cup of coffee by the water, reading a book and watching the birds is a great way to spend a morning.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,backyard,exterior" data-index="39">
+                <a class="gallery-link-full" href="photos/gallery/full/38.jpg" aria-label="Open photo: Pool Loungers">
+                    <img src="photos/gallery/thumbs/38.jpg" alt="Pool Loungers" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool Loungers</span><span class="overlay-desc">Separate seating areas give you plenty of options to maximize your time outside.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,exterior" data-index="40">
+                <a class="gallery-link-full" href="photos/gallery/full/39.jpg" aria-label="Open photo: Grill Station">
+                    <img src="photos/gallery/thumbs/39.jpg" alt="Grill Station" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Grill Station</span><span class="overlay-desc">You&#x27;ll find a new Weber grill and all the tools to make everyone a grillmaster.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,backyard,dock,exterior" data-index="41">
+                <a class="gallery-link-full" href="photos/gallery/full/40.jpg" aria-label="Open photo: Pool Sun Shelf">
+                    <img src="photos/gallery/thumbs/40.jpg" alt="Pool Sun Shelf" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool Sun Shelf</span><span class="overlay-desc">The sun shelf is perfect for cooling off without getting your hair wet.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="42">
+                <a class="gallery-link-full" href="photos/gallery/full/41.jpg" aria-label="Open photo: Caddy&#x27;s Restaurant">
+                    <img src="photos/gallery/thumbs/41.jpg" alt="Caddy&#x27;s Restaurant" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Caddy&#x27;s Restaurant</span><span class="overlay-desc">By boat or by car, Caddy&#x27;s is always at the top of the places to eat when on the island.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,dining,exterior" data-index="43">
+                <a class="gallery-link-full" href="photos/gallery/full/42.jpg" aria-label="Open photo: Covered Outdoor Dining">
+                    <img src="photos/gallery/thumbs/42.jpg" alt="Covered Outdoor Dining" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Covered Outdoor Dining</span><span class="overlay-desc">Since the outdoor dining area is covered, you can use it any time and in any weather.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="dock" data-index="44">
+                <a class="gallery-link-full" href="photos/gallery/full/43.jpg" aria-label="Open photo: Dock Fishing Chair">
+                    <img src="photos/gallery/thumbs/43.jpg" alt="Dock Fishing Chair" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Dock Fishing Chair</span><span class="overlay-desc">Is there anything better than casting a line, drinking a cold beer, and feeling the salt breeze?</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="dock" data-index="45">
+                <a class="gallery-link-full" href="photos/gallery/full/44.jpg" aria-label="Open photo: Kayak Launch">
+                    <img src="photos/gallery/thumbs/44.jpg" alt="Kayak Launch" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Kayak Launch</span><span class="overlay-desc">Launching a kayak is even easier with the kayak launch attached to the dock.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,pool,exterior,dock" data-index="46">
+                <a class="gallery-link-full" href="photos/gallery/full/45.jpg" aria-label="Open photo: Kayaks by Pool">
+                    <img src="photos/gallery/thumbs/45.jpg" alt="Kayaks by Pool" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Kayaks by Pool</span><span class="overlay-desc">The huge side yard gives you lots of extra space, and the 2 kayaks are there when you&#x27;re ready to explore the Intracoastal waters right off your backyard!</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood,exterior,dock,pool" data-index="47">
+                <a class="gallery-link-full" href="photos/gallery/full/46.jpg" aria-label="Open photo: Aerial Waterfront">
+                    <img src="photos/gallery/thumbs/46.jpg" alt="Aerial Waterfront" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Aerial Waterfront</span><span class="overlay-desc">&#x27;The island life is the life for me.&#x27; – Everyone</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="48">
+                <a class="gallery-link-full" href="photos/gallery/full/47.jpg" aria-label="Open photo: Clearwater Aquarium">
+                    <img src="photos/gallery/thumbs/47.jpg" alt="Clearwater Aquarium" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Clearwater Aquarium</span><span class="overlay-desc">Clearwater Marine Aquarium, a working marine rescue center, is about 20 minutes away.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="dock,pool,backyard,exterior" data-index="49">
+                <a class="gallery-link-full" href="photos/gallery/full/48.jpg" aria-label="Open photo: Pool &amp; Dock Twilight">
+                    <img src="photos/gallery/thumbs/48.jpg" alt="Pool &amp; Dock Twilight" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool &amp; Dock Twilight</span><span class="overlay-desc">The prettiest view of the property is from the rooftop deck looking down at twilight.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="50">
+                <a class="gallery-link-full" href="photos/gallery/full/49.jpg" aria-label="Open photo: Guppy&#x27;s Restaurant">
+                    <img src="photos/gallery/thumbs/49.jpg" alt="Guppy&#x27;s Restaurant" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Guppy&#x27;s Restaurant</span><span class="overlay-desc">Back on IRB, if you&#x27;re looking for a nice lunch or dinner, be sure to hit up Guppy&#x27;s – you can walk or take the golf cart.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="51">
+                <a class="gallery-link-full" href="photos/gallery/full/50.jpg" aria-label="Open photo: Salt Rock Grill">
+                    <img src="photos/gallery/thumbs/50.jpg" alt="Salt Rock Grill" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Salt Rock Grill</span><span class="overlay-desc">Salt Rock Grill is a great destination for a nice family dinner or romantic night out.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living" data-index="52">
+                <a class="gallery-link-full" href="photos/gallery/full/51.jpg" aria-label="Open photo: Open Staircase">
+                    <img src="photos/gallery/thumbs/51.jpg" alt="Open Staircase" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Open Staircase</span><span class="overlay-desc">The hardest part will be choosing which room you want to stay in.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="kitchen" data-index="53">
+                <a class="gallery-link-full" href="photos/gallery/full/52.jpg" aria-label="Open photo: Kitchen Detail">
+                    <img src="photos/gallery/thumbs/52.jpg" alt="Kitchen Detail" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Kitchen Detail</span><span class="overlay-desc">If anyone wants to whip up a gourmet breakfast or seafood dinner, they&#x27;ll find everything they need in the well-appointed kitchen.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="kitchen,dining" data-index="54">
+                <a class="gallery-link-full" href="photos/gallery/full/53.jpg" aria-label="Open photo: Kitchen &amp; Dining">
+                    <img src="photos/gallery/thumbs/53.jpg" alt="Kitchen &amp; Dining" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Kitchen &amp; Dining</span><span class="overlay-desc">. . . and the proximity to the dining area means everyone can spend time together.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="55">
+                <a class="gallery-link-full" href="photos/gallery/full/54.jpg" aria-label="Open photo: Downtown Dunedin">
+                    <img src="photos/gallery/thumbs/54.jpg" alt="Downtown Dunedin" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Downtown Dunedin</span><span class="overlay-desc">For those who enjoy microbreweries, great food and shops, take an excursion to the fun little town of Dunedin.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living" data-index="56">
+                <a class="gallery-link-full" href="photos/gallery/full/55.jpg" aria-label="Open photo: Entry &amp; Staircase">
+                    <img src="photos/gallery/thumbs/55.jpg" alt="Entry &amp; Staircase" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Entry &amp; Staircase</span><span class="overlay-desc">Stylish, coastal touches greet you from the moment you walk in the door.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="living,waterfront-balcony-room" data-index="57">
+                <a class="gallery-link-full" href="photos/gallery/full/56.jpg" aria-label="Open photo: Waterfront Balcony Room">
+                    <img src="photos/gallery/thumbs/56.jpg" alt="Waterfront Balcony Room" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Balcony Room</span><span class="overlay-desc">The waterfront upstairs master bedroom has water views, a luscious king bed, and a private balcony overlooking the Intracoastal.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="waterfront-balcony-room" data-index="58">
+                <a class="gallery-link-full" href="photos/gallery/full/57.jpg" aria-label="Open photo: Waterfront Sitting Area">
+                    <img src="photos/gallery/thumbs/57.jpg" alt="Waterfront Sitting Area" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Sitting Area</span><span class="overlay-desc">The upstairs waterfront master is located right off the living room.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,rooftop,waterfront-balcony-room,exterior" data-index="59">
+                <a class="gallery-link-full" href="photos/gallery/full/58.jpg" aria-label="Open photo: Waterfront Balcony">
+                    <img src="photos/gallery/thumbs/58.jpg" alt="Waterfront Balcony" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Balcony</span><span class="overlay-desc">With clear views of the intracoastal and a stair leading up to the rooftop deck.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="private-retreat" data-index="60">
+                <a class="gallery-link-full" href="photos/gallery/full/59.jpg" aria-label="Open photo: Private Retreat TV">
+                    <img src="photos/gallery/thumbs/59.jpg" alt="Private Retreat TV" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Private Retreat TV</span><span class="overlay-desc">Each room has a brand new Samsung Smart TV. This room has ensuite access to the upstairs bathroom.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="private-retreat" data-index="61">
+                <a class="gallery-link-full" href="photos/gallery/full/60.jpg" aria-label="Open photo: Private Retreat">
+                    <img src="photos/gallery/thumbs/60.jpg" alt="Private Retreat" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Private Retreat</span><span class="overlay-desc">The 2nd upstairs master features a luxurious king bed and plenty of room for your suitcases and snorkeling gear.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="poolside-room" data-index="62">
+                <a class="gallery-link-full" href="photos/gallery/full/61.jpg" aria-label="Open photo: Poolside Room">
+                    <img src="photos/gallery/thumbs/61.jpg" alt="Poolside Room" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Poolside Room</span><span class="overlay-desc">The downstairs master has a comfortable king bed for any of your family or friends.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,pool,exterior,poolside-room" data-index="63">
+                <a class="gallery-link-full" href="photos/gallery/full/62.jpg" aria-label="Open photo: Poolside Patio">
+                    <img src="photos/gallery/thumbs/62.jpg" alt="Poolside Patio" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Poolside Patio</span><span class="overlay-desc">Choose the downstairs master? This will be your patio.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bunk-haven" data-index="64">
+                <a class="gallery-link-full" href="photos/gallery/full/64.jpg" aria-label="Open photo: Bunk Haven">
+                    <img src="photos/gallery/thumbs/64.jpg" alt="Bunk Haven" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Bunk Haven</span><span class="overlay-desc">Everyone loves bunk rooms! Four custom, built-in bunk beds feature Twin XL mattresses to comfortably fit kids or even adults.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bunk-haven" data-index="65">
+                <a class="gallery-link-full" href="photos/gallery/full/65.jpg" aria-label="Open photo: Bunk Nook Detail">
+                    <img src="photos/gallery/thumbs/65.jpg" alt="Bunk Nook Detail" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Bunk Nook Detail</span><span class="overlay-desc">Each bunk has its own niche, USB outlets, and personal LED light.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bunk-haven" data-index="66">
+                <a class="gallery-link-full" href="photos/gallery/full/63.jpg" aria-label="Open photo: Bunk Haven Nook">
+                    <img src="photos/gallery/thumbs/63.jpg" alt="Bunk Haven Nook" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Bunk Haven Nook</span><span class="overlay-desc">Which means your kids will beg you to go to bed!</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="bunk-haven" data-index="67">
+                <a class="gallery-link-full" href="photos/gallery/full/29.jpg" aria-label="Open photo: Bunk Haven">
+                    <img src="photos/gallery/thumbs/29.jpg" alt="Bunk Haven" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Bunk Haven</span><span class="overlay-desc">Who gets the top bunk?</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="68">
+                <a class="gallery-link-full" href="photos/gallery/full/66.jpg" aria-label="Open photo: John&#x27;s Pass">
+                    <img src="photos/gallery/thumbs/66.jpg" alt="John&#x27;s Pass" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">John&#x27;s Pass</span><span class="overlay-desc">John&#x27;s Pass on nearby Madeira Beach has tons of shops, big restaurants, and fishing charters.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="laundry" data-index="69">
+                <a class="gallery-link-full" href="photos/gallery/full/70.jpg" aria-label="Open photo: Laundry Room">
+                    <img src="photos/gallery/thumbs/70.jpg" alt="Laundry Room" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Laundry Room</span><span class="overlay-desc">The laundry room is well-appointed in case you have to do . . . laundry.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="exterior" data-index="70">
+                <a class="gallery-link-full" href="photos/gallery/full/71.jpg" aria-label="Open photo: Tesla Charger">
+                    <img src="photos/gallery/thumbs/71.jpg" alt="Tesla Charger" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Tesla Charger</span><span class="overlay-desc">There is a Tesla charger for the EV drivers in your group.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,exterior" data-index="71">
+                <a class="gallery-link-full" href="photos/gallery/full/72.jpg" aria-label="Open photo: Outdoor Shower">
+                    <img src="photos/gallery/thumbs/72.jpg" alt="Outdoor Shower" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Outdoor Shower</span><span class="overlay-desc">An outdoor shower comes in handy when you get back from the beach or from kayaking.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="dock,backyard,pool,exterior" data-index="72">
+                <a class="gallery-link-full" href="photos/gallery/full/73.jpg" aria-label="Open photo: Poolside Wine &amp; Charcuterie">
+                    <img src="photos/gallery/thumbs/73.jpg" alt="Poolside Wine &amp; Charcuterie" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Poolside Wine &amp; Charcuterie</span><span class="overlay-desc">Be sure to grab some snacks so you don&#x27;t have to miss one minute being outdoors!</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,backyard,exterior" data-index="73">
+                <a class="gallery-link-full" href="photos/gallery/full/74.jpg" aria-label="Open photo: Pool Deck Chairs">
+                    <img src="photos/gallery/thumbs/74.jpg" alt="Pool Deck Chairs" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool Deck Chairs</span><span class="overlay-desc">Which spot will you pick?</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,exterior,backyard" data-index="74">
+                <a class="gallery-link-full" href="photos/gallery/full/75.jpg" aria-label="Open photo: Pool &amp; Glass Wall">
+                    <img src="photos/gallery/thumbs/75.jpg" alt="Pool &amp; Glass Wall" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool &amp; Glass Wall</span><span class="overlay-desc">The resort-like layout of the backyard really builds on the indoor/outdoor feel of the home.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,backyard,exterior" data-index="75">
+                <a class="gallery-link-full" href="photos/gallery/full/76.jpg" aria-label="Open photo: Backyard Overview">
+                    <img src="photos/gallery/thumbs/76.jpg" alt="Backyard Overview" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Backyard Overview</span><span class="overlay-desc">The large back yard is perfect for entertaining day or night.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,exterior,dock,backyard" data-index="76">
+                <a class="gallery-link-full" href="photos/gallery/full/77.jpg" aria-label="Open photo: Twilight Pool Glow">
+                    <img src="photos/gallery/thumbs/77.jpg" alt="Twilight Pool Glow" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Twilight Pool Glow</span><span class="overlay-desc">Right after sunset is the best time to hang out on the rooftop deck.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,backyard,exterior" data-index="77">
+                <a class="gallery-link-full" href="photos/gallery/full/78.jpg" aria-label="Open photo: House &amp; Pool at Dusk">
+                    <img src="photos/gallery/thumbs/78.jpg" alt="House &amp; Pool at Dusk" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">House &amp; Pool at Dusk</span><span class="overlay-desc">You can&#x27;t beat the pool, rooftop deck, firepit, and floor to glass ceiling views.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,backyard,exterior" data-index="78">
+                <a class="gallery-link-full" href="photos/gallery/full/79.jpg" aria-label="Open photo: Pool at Twilight">
+                    <img src="photos/gallery/thumbs/79.jpg" alt="Pool at Twilight" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool at Twilight</span><span class="overlay-desc">Welcome to Magnolia By The Sea! &#x27;Best beach house in Florida, hands down.&#x27; – Kenzie M. &#x27;24</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="pool,backyard,dining,exterior" data-index="79">
+                <a class="gallery-link-full" href="photos/gallery/full/80.jpg" aria-label="Open photo: Pool Umbrella">
+                    <img src="photos/gallery/thumbs/80.jpg" alt="Pool Umbrella" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool Umbrella</span><span class="overlay-desc">After a long day in the sun, the shade from an umbrella can be a welcome sight.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood,beach" data-index="80">
+                <a class="gallery-link-full" href="photos/gallery/full/81.jpg" aria-label="Open photo: St. Pete Pier">
+                    <img src="photos/gallery/thumbs/81.jpg" alt="St. Pete Pier" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">St. Pete Pier</span><span class="overlay-desc">Downtown St. Pete has lots of incredible dining options, or you can just take a walk on the pier and grab an adult beverage.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,exterior" data-index="81">
+                <a class="gallery-link-full" href="photos/gallery/full/82.jpg" aria-label="Open photo: Deck Charcuterie">
+                    <img src="photos/gallery/thumbs/82.jpg" alt="Deck Charcuterie" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Deck Charcuterie</span><span class="overlay-desc">How are your charcuterie skills?</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="dock,backyard,dining,exterior" data-index="82">
+                <a class="gallery-link-full" href="photos/gallery/full/83.jpg" aria-label="Open photo: Dock Umbrella Table">
+                    <img src="photos/gallery/thumbs/83.jpg" alt="Dock Umbrella Table" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Dock Umbrella Table</span><span class="overlay-desc">Sometimes you just want to sit on the dock and watch the boats go by.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="dining,exterior,backyard" data-index="83">
+                <a class="gallery-link-full" href="photos/gallery/full/84.jpg" aria-label="Open photo: Teak Outdoor Table">
+                    <img src="photos/gallery/thumbs/84.jpg" alt="Teak Outdoor Table" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Teak Outdoor Table</span><span class="overlay-desc">Care to dine alfresco? The teak outdoor table can be used day or night.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="backyard,pool,exterior" data-index="84">
+                <a class="gallery-link-full" href="photos/gallery/full/85.jpg" aria-label="Open photo: Pool Loungers Wide">
+                    <img src="photos/gallery/thumbs/85.jpg" alt="Pool Loungers Wide" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Pool Loungers Wide</span><span class="overlay-desc">If you don&#x27;t spend time laying by the pool, you didn&#x27;t do it right.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="exterior" data-index="85">
+                <a class="gallery-link-full" href="photos/gallery/full/86.jpg" aria-label="Open photo: House at Dusk">
+                    <img src="photos/gallery/thumbs/86.jpg" alt="House at Dusk" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">House at Dusk</span><span class="overlay-desc">The large circular driveway fits lots of cars and the mature landscaping feels like a luxury resort.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="rooftop,backyard,exterior" data-index="86">
+                <a class="gallery-link-full" href="photos/gallery/full/87.jpg" aria-label="Open photo: Rooftop Sunset">
+                    <img src="photos/gallery/thumbs/87.jpg" alt="Rooftop Sunset" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Rooftop Sunset</span><span class="overlay-desc">Enjoy both sunrises and sunset from the rooftop deck . . .</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood" data-index="87">
+                <a class="gallery-link-full" href="photos/gallery/full/88.jpg" aria-label="Open photo: Busch Gardens">
+                    <img src="photos/gallery/thumbs/88.jpg" alt="Busch Gardens" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Busch Gardens</span><span class="overlay-desc">Feeling adventurous? Take a day and visit Busch Gardens, which is a huge amusement park with both rollercoasters and lots of animals to see and interact with.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood,exterior" data-index="88">
+                <a class="gallery-link-full" href="photos/gallery/full/89.jpg" aria-label="Open photo: Waterfront Aerial">
+                    <img src="photos/gallery/thumbs/89.jpg" alt="Waterfront Aerial" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Waterfront Aerial</span><span class="overlay-desc">Magnolia By The Sea is really by the sea.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="neighborhood,exterior" data-index="89">
+                <a class="gallery-link-full" href="photos/gallery/full/90.jpg" aria-label="Open photo: Aerial Neighborhood">
+                    <img src="photos/gallery/thumbs/90.jpg" alt="Aerial Neighborhood" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Aerial Neighborhood</span><span class="overlay-desc">Huge open water views make a huge difference.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="floor-plan,living,bathroom,waterfront-balcony-room,private-retreat,bunk-haven,poolside-room,laundry,kitchen,dining" data-index="90">
+                <a class="gallery-link-full" href="photos/gallery/full/main-floor.jpg" aria-label="Open photo: Main Floor Plan">
+                    <img src="photos/gallery/thumbs/main-floor.jpg" alt="Main Floor Plan" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Main Floor Plan</span><span class="overlay-desc">The main floor layout is open and all of the bedrooms are easy to access, no matter where you are.</span></div>
+            </div>
+            <div class="gallery-item showing" data-categories="floor-plan,living,bathroom,waterfront-balcony-room,private-retreat" data-index="91">
+                <a class="gallery-link-full" href="photos/gallery/full/upstairs-floor.jpg" aria-label="Open photo: Upstairs Floor Plan">
+                    <img src="photos/gallery/thumbs/upstairs-floor.jpg" alt="Upstairs Floor Plan" width="400" height="400" loading="lazy" decoding="async">
+                </a>
+                <div class="overlay"><span class="overlay-label">Upstairs Floor Plan</span><span class="overlay-desc">The upstairs retreat features 2 master king bedrooms with a large bathroom shared by both.</span></div>
+            </div>
+        </div>
     </div>
 
     <!-- Lightbox -->
@@ -404,17 +959,10 @@ const photos = [
 
 /* ── Build Gallery ── */
 const grid = document.getElementById('galleryGrid');
-photos.forEach((p, i) => {
-    const div = document.createElement('div');
-    div.className = 'gallery-item showing';
-    div.dataset.categories = p.cat.join(',');
-    div.dataset.index = i;
-    div.innerHTML = `
-        <img src="photos/gallery/thumbs/${p.id}.jpg" alt="${p.label}" width="400" height="400" loading="lazy">
-        <div class="overlay"><span class="overlay-label">${p.label}</span><span class="overlay-desc">${p.desc}</span></div>
-    `;
-    div.addEventListener('click', () => openLightbox(i));
-    grid.appendChild(div);
+// Photos are in the page HTML (crawlable); attach the lightbox to each one.
+grid.querySelectorAll('.gallery-item').forEach(div => {
+    const i = parseInt(div.dataset.index, 10);
+    div.addEventListener('click', e => { e.preventDefault(); openLightbox(i); });
 });
 
 /* ── Filtering ── */
