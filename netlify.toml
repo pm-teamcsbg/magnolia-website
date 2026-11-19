@@ -20,8 +20,15 @@
   status = 200
 
 # Cache static assets
+# Note: "/photos/*" also matched the /photos gallery PAGE (pretty URL) and cached its HTML for 30 days.
+# Scope long caching to image folders only.
 [[headers]]
-  for = "/photos/*"
+  for = "/photos/gallery/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/photos/hero/*"
   [headers.values]
     Cache-Control = "public, max-age=2592000"
 

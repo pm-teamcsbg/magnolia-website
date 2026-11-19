@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse 92 photos of Magnolia By The Sea - waterfront vacation rental in Indian Rocks Beach, FL. Pool, dock, rooftop deck, 4 bedrooms, and Gulf Coast views.">
+    <meta name="description" content="Browse 92 photos of Magnolia By The Sea - waterfront vacation rental in Indian Rocks Beach, FL. Pool, dock, rooftop deck, 4 bedrooms, and Intracoastal views.">
     <link rel="canonical" href="https://magnoliabythesea.com/photos.html">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -344,7 +344,7 @@ const photos = [
     {"id": "32", "cat": ["bathroom"], "label": "Blue Tile Bath", "desc": "Downstairs, between one of the waterfront king rooms and the bunk room, is the 3rd bathroom. It has a tub/shower combination in case anyone wants a bath!"},
     {"id": "33", "cat": ["neighborhood"], "label": "VIP Marina Bar", "desc": "Beach trips equal margaritas. VIP Mexican is only 5 minutes away and has some of the best 'ritas in the world."},
     {"id": "34", "cat": ["backyard", "exterior", "rooftop"], "label": "Rooftop Dining", "desc": "Grab some fruit, cheese, Italian meats, and wine from a local shop and dinner is served."},
-    {"id": "35", "cat": ["backyard", "dock", "exterior"], "label": "Rooftop Fire Pit", "desc": ". . . or grab a chair, light the fire, and enjoy the colors in the sky next to the crackle of flames."},
+    {"id": "35", "cat": ["backyard", "dock", "exterior"], "label": "Waterfront Fire Pit", "desc": ". . . or grab a chair, light the fire, and enjoy the colors in the sky next to the crackle of flames."},
     {"id": "36", "cat": ["pool", "exterior", "backyard"], "label": "Pool at Twilight", "desc": "Can you picture yourself retiring here each evening?"},
     {"id": "37", "cat": ["backyard", "dining", "dock", "pool"], "label": "Waterfront Table", "desc": "Grabbing a cup of coffee by the water, reading a book and watching the birds is a great way to spend a morning."},
     {"id": "38", "cat": ["pool", "backyard", "exterior"], "label": "Pool Loungers", "desc": "Separate seating areas give you plenty of options to maximize your time outside."},
@@ -356,7 +356,7 @@ const photos = [
     {"id": "44", "cat": ["dock"], "label": "Kayak Launch", "desc": "Launching a kayak is even easier with the kayak launch attached to the dock."},
     {"id": "45", "cat": ["backyard", "pool", "exterior", "dock"], "label": "Kayaks by Pool", "desc": "The huge side yard gives you lots of extra space, and the 2 kayaks are there when you're ready to explore the Intracoastal waters right off your backyard!"},
     {"id": "46", "cat": ["neighborhood", "exterior", "dock", "pool"], "label": "Aerial Waterfront", "desc": "'The island life is the life for me.' – Everyone"},
-    {"id": "47", "cat": ["neighborhood"], "label": "Clearwater Aquarium", "desc": "Clearwater Marine Aquarium, home of 'Winter' and 'Hope', is only minutes away."},
+    {"id": "47", "cat": ["neighborhood"], "label": "Clearwater Aquarium", "desc": "Clearwater Marine Aquarium, a working marine rescue center, is about 20 minutes away."},
     {"id": "48", "cat": ["dock", "pool", "backyard", "exterior"], "label": "Pool & Dock Twilight", "desc": "The prettiest view of the property is from the rooftop deck looking down at twilight."},
     {"id": "49", "cat": ["neighborhood"], "label": "Guppy's Restaurant", "desc": "Back on IRB, if you're looking for a nice lunch or dinner, be sure to hit up Guppy's – you can walk or take the golf cart."},
     {"id": "50", "cat": ["neighborhood"], "label": "Salt Rock Grill", "desc": "Salt Rock Grill is a great destination for a nice family dinner or romantic night out."},
@@ -410,7 +410,7 @@ photos.forEach((p, i) => {
     div.dataset.categories = p.cat.join(',');
     div.dataset.index = i;
     div.innerHTML = `
-        <img src="photos/gallery/thumbs/${p.id}.jpg" alt="${p.label}" loading="lazy">
+        <img src="photos/gallery/thumbs/${p.id}.jpg" alt="${p.label}" width="400" height="400" loading="lazy">
         <div class="overlay"><span class="overlay-label">${p.label}</span><span class="overlay-desc">${p.desc}</span></div>
     `;
     div.addEventListener('click', () => openLightbox(i));
