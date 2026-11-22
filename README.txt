@@ -4,7 +4,8 @@ Updated: April 7, 2026
 
 SITE STRUCTURE
 ==============
-index.html .............. Main landing page with booking form
+index.html .............. Main landing page with the OwnerRez booking widget
+thank-you.html .......... Page guests see after they finish booking
 photos.html ............. Full photo gallery (92 photos) with filters
 reviews.html ............ Guest reviews page
 logo-white.png .......... White logo for nav
@@ -13,9 +14,6 @@ logo-gray.png ........... Gray logo variant
 photos/ ................. Original + gallery photos
   gallery/thumbs/ ....... 92 compressed thumbnails (~38KB each)
   gallery/full/ ......... 92 full-size photos (~350KB each)
-netlify/ ................ Netlify deployment config
-  functions/ ............ Serverless functions
-    get-availability.js . iCal proxy for OwnerRez calendar
 netlify.toml ............ Netlify build config
 
 DEPLOYMENT TO NETLIFY
@@ -24,25 +22,12 @@ DEPLOYMENT TO NETLIFY
 2. Connect the repo to Netlify (netlify.com > Add New Site > Import from Git)
 3. Build settings should auto-detect from netlify.toml:
    - Publish directory: .
-   - Functions directory: netlify/functions
 
-SET UP EMAIL NOTIFICATIONS (IMPORTANT)
-======================================
-After deploying to Netlify, you need to configure where booking inquiries are emailed:
-
-1. Go to your Netlify site dashboard
-2. Navigate to: Forms > booking-inquiry
-3. Click "Form notifications" > "Add notification" > "Email notification"
-4. Add BOTH email addresses:
-   - mcmpropertyholdings@gmail.com
-   - tom@fldvr.com
-5. Customize the email subject line (e.g., "New Booking Inquiry - Magnolia By The Sea")
-6. Save
-
-All form submissions are also stored in the Netlify dashboard under Forms,
-so you'll never lose an inquiry even if email delivery is delayed.
-
-Free tier: 100 form submissions/month. More than enough for a vacation rental.
+BOOKING
+=======
+Guests book on the homepage through the OwnerRez booking widget. Florida Dreamscape
+Vacation Rentals handles the reservation and the confirmation email. The old
+availability calendar, inquiry form, and iCal function have been removed.
 
 FEATURES
 ========
@@ -54,8 +39,7 @@ Landing Page (index.html):
   - 4 bedroom cards with descriptions
   - Outdoor living section with parallax background
   - Golf cart & beach section
-  - Interactive 6-month calendar synced with OwnerRez iCal feed
-  - Booking inquiry form with date selection, guest info, and Netlify Forms submission
+  - OwnerRez booking widget (instant booking through Florida Dreamscape)
   - Location & distance guide
   - 7 guest reviews with link to full reviews page
   - Lightbox photo viewer on: gallery preview, all bedroom cards, outdoor section,
@@ -70,28 +54,10 @@ Photo Gallery (photos.html):
   - URL hash filtering support (e.g., photos.html#pool)
   - Sticky filter bar
 
-Booking Form:
-  - Interactive calendar with 6 months of dates
-  - Real-time availability from OwnerRez iCal feed (via Netlify Function)
-  - Booked dates are grayed out and unselectable
-  - Date range selection with visual highlighting
-  - Validates that no booked dates fall within selected range
-  - Fields: dates, name, email, phone, guest count, children, trip purpose,
-    special requests, referral source
-  - Spam protection via honeypot field
-  - Success confirmation on submit
-  - Submits to Netlify Forms (emails + dashboard storage)
-
-BOOKING FORM FIELDS
-===================
-Required: Check-in date, Check-out date, First name, Last name, Email, Phone, Guests
-Optional: Children count, Trip purpose, Special requests, Referral source
-
-Booking Rules Displayed:
-  - Check-in: 4:00 PM
-  - Check-out: 10:00 AM
-  - Max guests: 10
-  - Primary renter must be 21+
+Booking:
+  - OwnerRez booking widget on the homepage
+  - Links with ?offer=CODE prefill that code in the widget
+  - After booking, guests land on /thank-you
 
 PROPERTY DETAILS
 ================
@@ -107,11 +73,11 @@ RESPONSIVE DESIGN
 =================
 Mobile Breakpoints:
   - 480px: Single column layouts, adjusted font sizes
-  - 768px: 2-column grids, condensed nav, stacked date chips
+  - 768px: 2-column grids, condensed nav
   - 1024px+: Full multi-column layouts
 
 BROWSER COMPATIBILITY
 =====================
   - Modern browsers (Chrome, Firefox, Safari, Edge)
   - iOS 12+, Android 6+
-  - Requires JavaScript for calendar, lightbox, and form features
+  - Requires JavaScript for the booking widget and the photo lightbox

@@ -395,7 +395,7 @@
       "name": "How do I book Magnolia By The Sea?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can book directly at magnoliabythesea.com using the availability calendar and inquiry form, or through Airbnb at airbnb.com/h/magnolia-by-the-sea, where it is a Guest Favorite rated 5.0 from 48 reviews (as of November 2026). The property is professionally managed by Florida Dreamscape Vacation Rentals."
+        "text": "You can book directly at magnoliabythesea.com, or through Airbnb at airbnb.com/h/magnolia-by-the-sea, where it is a Guest Favorite rated 5.0 from 48 reviews (as of November 2026). The property is professionally managed by Florida Dreamscape Vacation Rentals."
       }
     }
   ]
@@ -1151,253 +1151,54 @@
             margin-bottom: 2rem;
         }
 
-        .calendar-wrapper {
+        .booking-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.5rem 1.25rem 0.5rem;
             border-radius: 8px;
-            max-width: 900px;
-            margin: 0 auto 2rem;
+            max-width: 760px;
+            margin: 0 auto;
         }
 
-        .calendar-months {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .month {
-            background: var(--light-gray);
-            padding: 1rem;
-            border-radius: 6px;
-        }
-
-        .month h3 {
-            font-size: 1rem;
-            margin-bottom: 1rem;
+        .booking-note {
             text-align: center;
-        }
-
-        .weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .weekday {
-            text-align: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-light);
-            padding: 0.5rem 0;
-        }
-
-        .days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0.25rem;
-        }
-
-        .day {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            background: var(--white);
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .day.available {
-            background: #e8f5e9;
-            color: #2e7d32;
-            font-weight: 600;
-        }
-
-        .day.booked {
-            background: #f5f5f5;
-            color: #999;
-        }
-
-        .day.today {
-            background: var(--teal);
-            color: var(--white);
-            font-weight: 600;
-        }
-
-        .calendar-note {
-            text-align: center;
-            color: var(--text-light);
+            color: var(--text-dark);
             font-size: 0.95rem;
-            margin: 2rem 0;
-            padding: 1rem;
+            line-height: 1.6;
+            margin: 0 0 1.25rem;
+            padding: 0.9rem 1rem;
             background: var(--sand);
             border-radius: 6px;
         }
 
-        .calendar-legend {
-            display: flex; justify-content: center; gap: 1.5rem;
-            margin-bottom: 1.5rem; flex-wrap: wrap;
-        }
-        .legend-item {
-            display: flex; align-items: center; gap: 0.4rem;
-            font-size: 0.8rem; color: var(--text-light);
-        }
-        .legend-swatch {
-            width: 16px; height: 16px; border-radius: 3px; border: 1px solid #ddd;
+        /* OwnerRez sizes its iframe to the phone or desktop width. */
+        .ownerrez-widget,
+        .ownerrez-widget iframe {
+            width: 100%;
+            max-width: 100%;
         }
 
-        /* Booking Form */
-        .booking-form-section {
-            margin-top: 2rem; padding-top: 2rem;
-            border-top: 2px solid var(--sand);
-        }
-        .booking-form-section h3 {
-            text-align: center; margin-bottom: 0.5rem;
-        }
-        .booking-form-subtitle {
-            text-align: center; color: var(--text-light);
-            font-size: 0.9rem; margin-bottom: 2rem;
+        .ownerrez-widget {
+            min-height: 520px;
         }
 
-        .booking-form {
-            max-width: 700px; margin: 0 auto;
+        .general-questions {
+            max-width: 760px;
+            margin: 2rem auto 0;
+            text-align: center;
         }
 
-        .form-row {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 1rem; margin-bottom: 1rem;
+        .general-questions h3 {
+            margin-bottom: 0.35rem;
         }
 
-        .form-group {
-            display: flex; flex-direction: column;
+        .general-questions p {
+            margin-bottom: 0;
         }
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-group label {
-            font-size: 0.85rem; font-weight: 600;
-            color: var(--navy); margin-bottom: 0.35rem;
-        }
-        .form-group label .required {
-            color: #c0392b;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 0.75rem 1rem; border: 1.5px solid #ddd;
-            border-radius: 6px; font-family: 'Inter', sans-serif;
-            font-size: 0.95rem; color: var(--text-dark);
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-            background: white;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none; border-color: var(--teal);
-            box-shadow: 0 0 0 3px rgba(46, 139, 139, 0.15);
-        }
-        .form-group input:disabled {
-            background: #f0f0f0; cursor: not-allowed;
-        }
-        .form-group textarea {
-            resize: vertical; min-height: 80px;
-        }
-
-        .date-selected-display {
-            display: flex; gap: 1rem; justify-content: center;
-            margin-bottom: 1.5rem; flex-wrap: wrap;
-        }
-        .date-chip {
-            background: var(--sand); padding: 0.6rem 1.25rem;
-            border-radius: 6px; font-size: 0.9rem; font-weight: 500;
-            color: var(--navy); text-align: center;
-        }
-        .date-chip small {
-            display: block; font-size: 0.75rem; color: var(--text-light);
-            font-weight: 400;
-        }
-        .date-chip.empty {
-            border: 2px dashed #ccc; background: transparent; color: #999;
-        }
-
-        .day.selected-start {
-            background: var(--teal) !important; color: white !important;
-            font-weight: 700; border-radius: 4px 0 0 4px;
-        }
-        .day.selected-end {
-            background: var(--navy) !important; color: white !important;
-            font-weight: 700; border-radius: 0 4px 4px 0;
-        }
-        .day.in-range {
-            background: rgba(46, 139, 139, 0.15) !important;
-            color: var(--teal) !important;
-        }
-        .day.booked {
-            background: #f5f5f5; color: #bbb;
-            text-decoration: line-through; cursor: not-allowed;
-            pointer-events: none;
-        }
-        .day.turnover {
-            background: linear-gradient(135deg, #e8f5e9 50%, #f5f5f5 50%);
-            color: #2e7d32; cursor: pointer; font-weight: 600;
-        }
-        .day.turnover:hover {
-            background: var(--sand); color: var(--navy);
-        }
-        .day.available { cursor: pointer; }
-        .day.available:hover {
-            background: var(--sand); color: var(--navy); font-weight: 600;
-        }
-        .day.past {
-            color: #ccc; pointer-events: none;
-        }
-
-        .booking-rules {
-            display: flex; gap: 1rem; justify-content: center;
-            flex-wrap: wrap; margin-bottom: 1.5rem;
-        }
-        .booking-rule {
-            font-size: 0.8rem; color: var(--text-light);
-            background: var(--light-gray); padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-        }
-
-        .submit-row {
-            text-align: center; margin-top: 1.5rem;
-        }
-        .submit-row button {
-            padding: 1rem 3rem; font-size: 1.1rem;
-            background: var(--teal); color: white; border: none;
-            border-radius: 6px; font-weight: 600; cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-        }
-        .submit-row button:hover {
-            background: var(--navy); transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(46,139,139,0.3);
-        }
-        .submit-row button:disabled {
-            background: #ccc; cursor: not-allowed;
-            transform: none; box-shadow: none;
-        }
-
-        .form-success {
-            text-align: center; padding: 2rem;
-            background: #e8f5e9; border-radius: 8px;
-            display: none;
-        }
-        .form-success h3 { color: #2e7d32; margin-bottom: 0.5rem; }
-        .form-success p { color: #555; }
 
         @media (max-width: 768px) {
-            .form-row { grid-template-columns: 1fr; }
-            .date-selected-display { flex-direction: column; align-items: center; }
+            .booking-card {
+                padding: 1rem 0.5rem 0.25rem;
+            }
         }
 
         /* Location Section */
@@ -1848,10 +1649,6 @@
             }
 
             .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .calendar-months {
                 grid-template-columns: 1fr;
             }
         }
@@ -2315,185 +2112,35 @@
                 </details>
                 <details class="faq-item">
                     <summary>How do I book Magnolia By The Sea?</summary>
-                    <p>You can book directly at magnoliabythesea.com using the availability calendar and inquiry form, or through Airbnb at airbnb.com/h/magnolia-by-the-sea, where it is a Guest Favorite rated 5.0 from 48 reviews (as of November 2026). The property is professionally managed by Florida Dreamscape Vacation Rentals.</p>
+                    <p>You can book directly at magnoliabythesea.com, or through Airbnb at airbnb.com/h/magnolia-by-the-sea, where it is a Guest Favorite rated 5.0 from 48 reviews (as of November 2026). The property is professionally managed by Florida Dreamscape Vacation Rentals.</p>
                 </details>
             </div>
         </div>
     </section>
 
-    <!-- Calendar & Booking Section -->
+    <!-- Booking Section -->
     <section class="calendar" id="calendar">
         <div class="container">
             <h2>Check Availability &amp; Book</h2>
-            <div class="calendar-wrapper">
-                <p style="text-align:center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.95rem;">Select your check-in and check-out dates below. Green dates are available.</p>
+            <div class="booking-card">
+                <p class="booking-note">You'll complete your booking securely through Florida Dreamscape Vacation Rentals, the property manager.</p>
+                <!--
+                  OwnerRez embed. The current widget.js at app.ownerrez.com reads
+                  data-widgetId, data-propertyId, and data-widget-type, and copies
+                  or_code from this page's address into the booking box.
+                -->
+                <div class="ownerrez-widget" data-widget-type="Book Now" data-widgetId="7752d34ec3b4428e97a56cf492c7c310" data-propertyId="1da1d323398b4cc8adc946d8bae9d213"></div>
+            </div>
 
-                <div class="calendar-legend">
-                    <div class="legend-item"><div class="legend-swatch" style="background:#e8f5e9;border-color:#c8e6c9;"></div> Available</div>
-                    <div class="legend-item"><div class="legend-swatch" style="background:linear-gradient(135deg, #e8f5e9 50%, #f5f5f5 50%);border-color:#c8e6c9;"></div> Checkout only</div>
-                    <div class="legend-item"><div class="legend-swatch" style="background:#f5f5f5;border-color:#ddd;"></div> Booked</div>
-                    <div class="legend-item"><div class="legend-swatch" style="background:var(--teal);border-color:var(--teal);"></div> Check-in</div>
-                    <div class="legend-item"><div class="legend-swatch" style="background:var(--navy);border-color:var(--navy);"></div> Check-out</div>
-                </div>
-
-                <div class="calendar-months" id="calendarDisplay">
-                    <!-- Calendar generated by JavaScript -->
-                </div>
-
-                <div class="date-selected-display" id="dateDisplay">
-                    <div class="date-chip empty" id="checkinChip"><small>Check-in</small>Select a date</div>
-                    <div class="date-chip empty" id="checkoutChip"><small>Check-out</small>Select a date</div>
-                </div>
-
-                <div class="calendar-note" id="calendarNote">
-                    Availability syncs with our booking system and updates hourly.
-                </div>
-
-                <!-- Booking Form -->
-                <div class="booking-form-section" id="bookingFormSection">
-                    <h3>Request This Booking</h3>
-                    <p class="booking-form-subtitle">We'll confirm availability and send you a booking link within a few hours.</p>
-
-                    <div class="booking-rules">
-                        <span class="booking-rule">3-night minimum</span>
-                        <span class="booking-rule">Check-in: 4:00 PM</span>
-                        <span class="booking-rule">Check-out: 10:00 AM</span>
-                        <span class="booking-rule">Max guests: 10</span>
-                        <span class="booking-rule">Primary renter: 21+</span>
-                    </div>
-
-                    <form class="booking-form" id="bookingForm" name="booking-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                        <input type="hidden" name="form-name" value="booking-inquiry">
-                        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
-                        <input type="hidden" name="checkin-date" id="hiddenCheckin">
-                        <input type="hidden" name="checkout-date" id="hiddenCheckout">
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Check-in Date</label>
-                                <input type="text" id="displayCheckin" disabled placeholder="Select on calendar above">
-                            </div>
-                            <div class="form-group">
-                                <label>Check-out Date</label>
-                                <input type="text" id="displayCheckout" disabled placeholder="Select on calendar above">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>First Name <span class="required">*</span></label>
-                                <input type="text" name="first-name" required autocomplete="given-name">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name <span class="required">*</span></label>
-                                <input type="text" name="last-name" required autocomplete="family-name">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Email <span class="required">*</span></label>
-                                <input type="email" name="email" required autocomplete="email">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone <span class="required">*</span></label>
-                                <input type="tel" name="phone" required autocomplete="tel" placeholder="(555) 555-5555">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Number of Guests <span class="required">*</span></label>
-                                <select name="guests" required>
-                                    <option value="">Select...</option>
-                                    <option value="1">1 Guest</option>
-                                    <option value="2">2 Guests</option>
-                                    <option value="3">3 Guests</option>
-                                    <option value="4">4 Guests</option>
-                                    <option value="5">5 Guests</option>
-                                    <option value="6">6 Guests</option>
-                                    <option value="7">7 Guests</option>
-                                    <option value="8">8 Guests</option>
-                                    <option value="9">9 Guests</option>
-                                    <option value="10">10 Guests</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Number of Children (under 12)</label>
-                                <select name="children">
-                                    <option value="0">None</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5+</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label>What brings you to Indian Rocks Beach?</label>
-                                <select name="trip-purpose">
-                                    <option value="">Select (optional)...</option>
-                                    <option value="family-vacation">Family Vacation</option>
-                                    <option value="couples-getaway">Couples Getaway</option>
-                                    <option value="friends-trip">Friends Trip</option>
-                                    <option value="celebration">Birthday / Anniversary / Celebration</option>
-                                    <option value="work-retreat">Work Retreat</option>
-                                    <option value="relocation">Temporary Housing / Relocation</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label>Special Requests or Questions</label>
-                                <textarea name="special-requests" placeholder="Early check-in, late checkout, event details, pet questions, anything else we should know..."></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label>How did you hear about us?</label>
-                                <select name="referral-source">
-                                    <option value="">Select (optional)...</option>
-                                    <option value="airbnb">Airbnb</option>
-                                    <option value="vrbo">VRBO</option>
-                                    <option value="google">Google Search</option>
-                                    <option value="instagram">Instagram</option>
-                                    <option value="facebook">Facebook</option>
-                                    <option value="friend">Friend / Family Referral</option>
-                                    <option value="return-guest">Returning Guest</option>
-                                    <option value="ai-assistant">ChatGPT or another AI assistant</option>
-                                    <option value="travel-site">Visit St. Pete/Clearwater or a travel article</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Referral Code</label>
-                                <input type="text" name="referral-code" placeholder="If someone referred you">
-                            </div>
-                            <div class="form-group">
-                                <label>Coupon Code</label>
-                                <input type="text" name="coupon-code" placeholder="If you have one">
-                            </div>
-                        </div>
-
-                        <div class="submit-row">
-                            <button type="submit" id="submitBtn" disabled>Select your dates above to continue</button>
-                        </div>
-                    </form>
-
-                    <div class="form-success" id="formSuccess">
-                        <h3>Booking Request Received!</h3>
-                        <p>We've received your inquiry and will confirm availability shortly. You'll hear from us within a few hours. Check your email for a confirmation.</p>
-                    </div>
-                </div>
+            <!--
+              GENERAL QUESTIONS
+              There is no separate contact form on the site. Guests book in the
+              widget above. If a short form for general questions is wanted later,
+              put it in #general-questions. Do not add a form backend here.
+            -->
+            <div id="general-questions" class="general-questions">
+                <h3>Questions before you book?</h3>
+                <p>Call Florida Dreamscape at <a href="tel:+17272542022">(727) 254-2022</a>.</p>
             </div>
         </div>
     </section>
@@ -2757,346 +2404,6 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        /* ── Offer code prefill from ?offer= query param (used by offers.html links) ── */
-        (function() {
-            const offerParam = new URLSearchParams(window.location.search).get('offer');
-            if (offerParam) {
-                const cleaned = offerParam.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 20);
-                const couponInput = document.querySelector('input[name="coupon-code"]');
-                if (cleaned && couponInput) couponInput.value = cleaned;
-            }
-        })();
-
-        /* ── Calendar + Booking Form Logic ── */
-        let bookedDates = new Set();
-        let selectedCheckin = null;
-        let selectedCheckout = null;
-        const today = new Date();
-        today.setHours(0,0,0,0);
-
-        // Booked/blocked date ranges from OwnerRez (snapshot updated 2026-04-07)
-        // These serve as a fallback when the Netlify function isn't available
-        const bookingSnapshot = [
-            {start:'2026-03-29',end:'2026-04-03'},
-            {start:'2026-04-03',end:'2026-04-04'},
-            {start:'2026-04-05',end:'2026-04-09'},
-            {start:'2026-04-10',end:'2026-04-17'},
-            {start:'2026-04-17',end:'2026-04-18'},
-            {start:'2026-04-24',end:'2026-04-28'},
-            {start:'2026-04-30',end:'2026-05-03'},
-            {start:'2026-05-13',end:'2026-05-16'},
-            {start:'2026-05-18',end:'2026-05-28'},
-            {start:'2026-05-28',end:'2026-05-31'},
-            {start:'2026-06-04',end:'2026-06-07'},
-            {start:'2026-06-16',end:'2026-06-26'},
-            {start:'2026-06-26',end:'2026-07-05'},
-            {start:'2026-07-09',end:'2026-07-13'},
-            {start:'2026-07-13',end:'2026-07-19'},
-            {start:'2026-12-31',end:'2027-01-05'}
-        ];
-
-        function expandRangesToDates(ranges) {
-            var dates = new Set();
-            var turnovers = new Set();
-            ranges.forEach(function(r) {
-                turnovers.add(r.start); // check-in day is a turnover day
-                var d = new Date(r.start + 'T00:00:00');
-                var end = new Date(r.end + 'T00:00:00');
-                while (d < end) {
-                    dates.add(dateToStr(d));
-                    d.setDate(d.getDate() + 1);
-                }
-            });
-            return { booked: dates, turnovers: turnovers };
-        }
-
-        // Turnover dates: check-in days that are still available for checkout
-        var turnoverDates = new Set();
-
-        // Fetch availability from Netlify Function, fall back to snapshot
-        async function fetchAvailability() {
-            try {
-                const res = await fetch('/.netlify/functions/get-availability');
-                if (!res.ok) throw new Error('Function unavailable');
-                const data = await res.json();
-                bookedDates = new Set(data.bookedDates);
-                turnoverDates = new Set(data.turnoverDates || []);
-            } catch (e) {
-                // Use embedded snapshot as fallback
-                var result = expandRangesToDates(bookingSnapshot);
-                bookedDates = result.booked;
-                turnoverDates = result.turnovers;
-            }
-            generateCalendar();
-        }
-
-        function dateToStr(d) {
-            return d.getFullYear() + '-' +
-                String(d.getMonth()+1).padStart(2,'0') + '-' +
-                String(d.getDate()).padStart(2,'0');
-        }
-
-        function strToDate(s) {
-            const parts = s.split('-');
-            return new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
-        }
-
-        function formatDateNice(d) {
-            return d.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric', year:'numeric'});
-        }
-
-        // Check if any date in a range is booked (excluding turnover days at checkout position)
-        function rangeHasBookedDate(start, end) {
-            let d = new Date(start);
-            d.setDate(d.getDate() + 1); // skip check-in day itself
-            while (d < end) {
-                var ds = dateToStr(d);
-                // A turnover day on the checkout date itself is OK (guest checks out morning, new guest checks in afternoon)
-                // But a turnover day in the middle of the range means there's a conflict
-                if (bookedDates.has(ds)) {
-                    // Allow turnover day only if it's the checkout day (end date)
-                    if (!(turnoverDates.has(ds) && d.getTime() === end.getTime())) {
-                        return true;
-                    }
-                }
-                d.setDate(d.getDate() + 1);
-            }
-            return false;
-        }
-
-        function handleDayClick(dateStr) {
-            const clicked = strToDate(dateStr);
-            const isTurnover = turnoverDates.has(dateStr);
-
-            if (!selectedCheckin || (selectedCheckin && selectedCheckout)) {
-                // First click or reset: set check-in
-                if (isTurnover) {
-                    alert('This date is a check-in day for another guest. You can select it as a check-out date, but not as a check-in.');
-                    return;
-                }
-                selectedCheckin = clicked;
-                selectedCheckout = null;
-            } else {
-                // Second click: set check-out
-                if (clicked <= selectedCheckin) {
-                    // Clicked before check-in, reset to this as new check-in
-                    if (isTurnover) {
-                        alert('This date is a check-in day for another guest. You can select it as a check-out date, but not as a check-in.');
-                        return;
-                    }
-                    selectedCheckin = clicked;
-                    selectedCheckout = null;
-                } else if (Math.round((clicked - selectedCheckin) / (1000*60*60*24)) < 3) {
-                    alert('There is a 3-night minimum stay. Please select a check-out date at least 3 nights after your check-in.');
-                    return;
-                } else if (rangeHasBookedDate(selectedCheckin, clicked)) {
-                    alert('Your selected dates include booked nights. Please pick a range with all available dates.');
-                    return;
-                } else {
-                    selectedCheckout = clicked;
-                }
-            }
-
-            updateDateDisplay();
-            refreshCalendarHighlights();
-            updateFormState();
-        }
-
-        function updateDateDisplay() {
-            const ciChip = document.getElementById('checkinChip');
-            const coChip = document.getElementById('checkoutChip');
-
-            if (selectedCheckin) {
-                ciChip.className = 'date-chip';
-                ciChip.innerHTML = '<small>Check-in (4 PM)</small>' + formatDateNice(selectedCheckin);
-                document.getElementById('hiddenCheckin').value = dateToStr(selectedCheckin);
-                document.getElementById('displayCheckin').value = formatDateNice(selectedCheckin);
-            } else {
-                ciChip.className = 'date-chip empty';
-                ciChip.innerHTML = '<small>Check-in</small>Select a date';
-                document.getElementById('hiddenCheckin').value = '';
-                document.getElementById('displayCheckin').value = '';
-            }
-
-            if (selectedCheckout) {
-                coChip.className = 'date-chip';
-                const nights = Math.round((selectedCheckout - selectedCheckin) / (1000*60*60*24));
-                coChip.innerHTML = '<small>Check-out (10 AM) &middot; ' + nights + ' night' + (nights!==1?'s':'') + '</small>' + formatDateNice(selectedCheckout);
-                document.getElementById('hiddenCheckout').value = dateToStr(selectedCheckout);
-                document.getElementById('displayCheckout').value = formatDateNice(selectedCheckout);
-            } else {
-                coChip.className = 'date-chip empty';
-                coChip.innerHTML = '<small>Check-out</small>' + (selectedCheckin ? 'Now select check-out' : 'Select a date');
-                document.getElementById('hiddenCheckout').value = '';
-                document.getElementById('displayCheckout').value = '';
-            }
-        }
-
-        function updateFormState() {
-            const btn = document.getElementById('submitBtn');
-            if (selectedCheckin && selectedCheckout) {
-                const nights = Math.round((selectedCheckout - selectedCheckin) / (1000*60*60*24));
-                btn.disabled = false;
-                btn.textContent = 'Submit Booking Request (' + nights + ' night' + (nights!==1?'s':'') + ')';
-            } else {
-                btn.disabled = true;
-                btn.textContent = selectedCheckin ? 'Now select your check-out date' : 'Select your dates above to continue';
-            }
-        }
-
-        function refreshCalendarHighlights() {
-            document.querySelectorAll('.day[data-date]').forEach(function(el) {
-                el.classList.remove('selected-start', 'selected-end', 'in-range');
-                const d = el.dataset.date;
-                if (!d) return;
-                const date = strToDate(d);
-
-                if (selectedCheckin && dateToStr(date) === dateToStr(selectedCheckin)) {
-                    el.classList.add('selected-start');
-                }
-                if (selectedCheckout && dateToStr(date) === dateToStr(selectedCheckout)) {
-                    el.classList.add('selected-end');
-                }
-                if (selectedCheckin && selectedCheckout && date > selectedCheckin && date < selectedCheckout) {
-                    el.classList.add('in-range');
-                }
-            });
-        }
-
-        var monthsLoaded = 0;
-        var monthsPerBatch = 6;
-
-        function generateCalendar() {
-            const calendarDisplay = document.getElementById('calendarDisplay');
-            calendarDisplay.innerHTML = '';
-            monthsLoaded = 0;
-            loadMoreMonths();
-        }
-
-        function loadMoreMonths() {
-            const calendarDisplay = document.getElementById('calendarDisplay');
-            for (let i = 0; i < monthsPerBatch; i++) {
-                const monthDate = new Date(today.getFullYear(), today.getMonth() + monthsLoaded, 1);
-                calendarDisplay.appendChild(createMonthCalendar(monthDate));
-                monthsLoaded++;
-            }
-            updateLoadMoreBtn();
-        }
-
-        function updateLoadMoreBtn() {
-            var btn = document.getElementById('loadMoreMonths');
-            if (!btn) {
-                btn = document.createElement('button');
-                btn.id = 'loadMoreMonths';
-                btn.className = 'btn btn-outline';
-                btn.style.cssText = 'display:block;margin:1.5rem auto 2.5rem;padding:0.75rem 2rem;background:transparent;color:var(--teal);border:2px solid var(--teal);border-radius:4px;font-weight:600;cursor:pointer;font-family:Inter,sans-serif;transition:all 0.3s;';
-                btn.onmouseover = function(){ this.style.background='var(--teal)'; this.style.color='white'; };
-                btn.onmouseout = function(){ this.style.background='transparent'; this.style.color='var(--teal)'; };
-                btn.addEventListener('click', loadMoreMonths);
-                document.getElementById('calendarDisplay').after(btn);
-            }
-            var remaining = 18 - monthsLoaded; // up to 18 months out
-            if (remaining > 0) {
-                btn.textContent = 'Show More Months';
-                btn.style.display = 'block';
-            } else {
-                btn.style.display = 'none';
-            }
-        }
-
-        function createMonthCalendar(date) {
-            const monthEl = document.createElement('div');
-            monthEl.className = 'month';
-            const monthName = date.toLocaleDateString('en-US', {month:'long', year:'numeric'});
-            monthEl.innerHTML = '<h3>' + monthName + '</h3>';
-
-            const weekdaysEl = document.createElement('div');
-            weekdaysEl.className = 'weekdays';
-            ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(function(day) {
-                const d = document.createElement('div');
-                d.className = 'weekday';
-                d.textContent = day;
-                weekdaysEl.appendChild(d);
-            });
-            monthEl.appendChild(weekdaysEl);
-
-            const daysEl = document.createElement('div');
-            daysEl.className = 'days';
-            const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-            const daysInMonth = new Date(date.getFullYear(), date.getMonth()+1, 0).getDate();
-
-            for (let i = 0; i < firstDay; i++) {
-                daysEl.appendChild(document.createElement('div'));
-            }
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayEl = document.createElement('div');
-                dayEl.className = 'day';
-                dayEl.textContent = day;
-
-                const currentDate = new Date(date.getFullYear(), date.getMonth(), day);
-                const ds = dateToStr(currentDate);
-                dayEl.dataset.date = ds;
-
-                if (currentDate < today) {
-                    dayEl.classList.add('past');
-                } else if (bookedDates.has(ds) && turnoverDates.has(ds)) {
-                    // Turnover day: someone checks in, but previous guest can check out
-                    dayEl.classList.add('turnover');
-                    dayEl.addEventListener('click', function() { handleDayClick(ds); });
-                } else if (bookedDates.has(ds)) {
-                    dayEl.classList.add('booked');
-                } else {
-                    dayEl.classList.add('available');
-                    dayEl.addEventListener('click', function() { handleDayClick(ds); });
-                }
-
-                if (currentDate.toDateString() === today.toDateString()) {
-                    dayEl.classList.add('today');
-                }
-
-                daysEl.appendChild(dayEl);
-            }
-            monthEl.appendChild(daysEl);
-            return monthEl;
-        }
-
-        // Form submission
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            if (!selectedCheckin || !selectedCheckout) {
-                e.preventDefault();
-                alert('Please select your check-in and check-out dates on the calendar.');
-                return;
-            }
-
-            // For Netlify Forms, let it submit normally
-            // Show success message after a short delay
-            var form = this;
-            e.preventDefault();
-
-            var formData = new FormData(form);
-            fetch('/', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: new URLSearchParams(formData).toString()
-            }).then(function(res) {
-                if (!res.ok) { throw new Error('Form submit failed: ' + res.status); }
-                if (typeof window.gtag === 'function') {
-                    window.gtag('event', 'generate_lead', { form_name: 'booking-inquiry', guests: formData.get('guests') || '', referral_source: formData.get('referral-source') || '' });
-                }
-                form.style.display = 'none';
-                document.getElementById('formSuccess').style.display = 'block';
-                document.querySelector('.booking-form-subtitle').style.display = 'none';
-                document.querySelector('.booking-rules').style.display = 'none';
-            }).catch(function(err) {
-                alert('Something went wrong submitting the form. Please try again or contact us directly.');
-                console.error(err);
-            });
-        });
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', fetchAvailability);
-
         /* ── Even Row Logic ── */
         // Hides extra items so grids always show complete rows
         function enforceEvenRows(gridSelector, itemSelector) {
@@ -3136,5 +2443,18 @@
         window.addEventListener('load', applyEvenRows);
         window.addEventListener('resize', applyEvenRows);
     </script>
+    <script>
+        /* Marketing links use ?offer=CODE. OwnerRez prefills a discount from or_code. */
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var offer = (params.get('offer') || '').trim();
+            var existing = (params.get('or_code') || '').trim();
+            var code = offer || existing;
+            if (!code || params.get('or_code') === code) return;
+            params.set('or_code', code);
+            history.replaceState(null, '', window.location.pathname + '?' + params.toString() + window.location.hash);
+        })();
+    </script>
+    <script src="https://app.ownerrez.com/widget.js"></script>
 </body>
 </html>

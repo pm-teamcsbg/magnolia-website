@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Thank you for booking Magnolia By The Sea in Indian Rocks Beach. A confirmation email is on its way from Florida Dreamscape.">
+    <link rel="canonical" href="https://magnoliabythesea.com/thank-you">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>Thank You | Magnolia By The Sea</title>
+
+    <meta property="og:title" content="Thank You | Magnolia By The Sea">
+    <meta property="og:description" content="Your stay at Magnolia By The Sea is booked. A confirmation email is on its way from Florida Dreamscape.">
+    <meta property="og:image" content="https://magnoliabythesea.com/photos/hero/pool-dock-intracoastal-1600.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://magnoliabythesea.com/thank-you">
+    <meta property="og:site_name" content="Magnolia By The Sea">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #333; line-height: 1.6; background: #fff;
+            min-height: 100vh; display: flex; flex-direction: column;
+        }
+        :root {
+            --navy: #1B3A5C; --sand: #F5EDE3; --white: #FFFFFF;
+            --teal: #2E8B8B; --light-gray: #F8F8F8; --text-dark: #333;
+            --text-light: #666; --accent-gold: #C9A961;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
+        p { color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+        a { color: var(--teal); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--navy); }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            padding: 0.5rem 2rem; background: var(--navy);
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 120px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-links a { color: var(--white); font-size: 0.95rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--sand); }
+
+        .hamburger {
+            display: none; flex-direction: column; justify-content: center;
+            gap: 5px; cursor: pointer; padding: 8px; margin-left: auto;
+            z-index: 101; background: none; border: none;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 2px; background: var(--white);
+            border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        main {
+            flex: 1;
+            background: linear-gradient(180deg, var(--sand) 0%, var(--white) 42%);
+            padding: 11rem 1.5rem 4rem;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            border-top: 4px solid var(--accent-gold);
+            padding: clamp(2rem, 5vw, 3.25rem);
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(27, 58, 92, 0.08);
+        }
+        .eyebrow {
+            display: inline-block; font-size: 0.8rem; font-weight: 700;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--teal); margin-bottom: 1rem;
+        }
+        h1 { font-size: clamp(2rem, 6vw, 3rem); color: var(--navy); margin-bottom: 1rem; }
+        .card p { max-width: 34rem; margin-left: auto; margin-right: auto; }
+        .reference {
+            font-size: 0.9rem; color: var(--navy); font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block; padding: 0.875rem 2rem; background-color: var(--teal);
+            color: white; border-radius: 4px; font-weight: 600;
+            font-size: 1rem; margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: var(--navy); color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(46, 139, 139, 0.3);
+        }
+
+        footer {
+            background: var(--navy); padding: 2.5rem 2rem; text-align: center;
+        }
+        footer a { color: var(--sand); }
+        footer a:hover { color: var(--white); }
+        footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .logo img { height: 80px; }
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 70%;
+                background: var(--navy); flex-direction: column; justify-content: center;
+                gap: 1.5rem; transition: right 0.3s ease; padding: 2rem;
+            }
+            .nav-links.open { right: 0; }
+            main { padding: 8.5rem 1rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo-white.png" alt="Magnolia By The Sea" />
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="photos.html">Gallery</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="guide.html">Area Guide</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="index.html#calendar">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="card">
+            <span class="eyebrow" id="thankYouEyebrow">Thank you</span>
+            <h1>Thank you for choosing Magnolia By The Sea</h1>
+            <p id="bookingReference" class="reference" hidden></p>
+            <p>We can't wait to welcome you to Indian Rocks Beach. A confirmation email is on its way from Florida Dreamscape.</p>
+            <a class="btn" href="index.html">Back to the house</a>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Magnolia By The Sea</a></p>
+        <p style="margin-top: 0.75rem;">&copy; 2026 Magnolia By The Sea. Indian Rocks Beach, Florida.</p>
+    </footer>
+
+    <script>
+    (function() {
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
+    })();
+    </script>
+    <script>
+    (function () {
+        var GA_ID = 'G-9PS7Y1BZG3';
+        var params = new URLSearchParams(window.location.search);
+        var bookingId = (params.get('bookingId') || '').trim();
+        var reference = document.getElementById('bookingReference');
+        if (bookingId && reference) {
+            reference.hidden = false;
+            reference.textContent = 'Booking reference ' + bookingId;
+            var eyebrow = document.getElementById('thankYouEyebrow');
+            if (eyebrow) eyebrow.textContent = "You're booked";
+        }
+        if (!bookingId) return;
+
+        var storageKey = 'magnolia-purchase:' + bookingId;
+        try {
+            if (window.localStorage.getItem(storageKey)) return;
+            window.localStorage.setItem(storageKey, '1');
+        } catch (e) {}
+
+        var purchase = {
+            transaction_id: bookingId,
+            items: [{
+                item_id: 'magnolia-by-the-sea',
+                item_name: 'Magnolia By The Sea',
+                quantity: 1
+            }]
+        };
+        var rawValue = params.get('value');
+        if (rawValue) {
+            var amount = Number(rawValue);
+            if (isFinite(amount)) {
+                purchase.value = amount;
+                var currency = (params.get('currency') || 'USD').toUpperCase();
+                purchase.currency = /^[A-Z]{3}$/.test(currency) ? currency : 'USD';
+            }
+        }
+
+        function sendPurchase() {
+            window.gtag('event', 'purchase', purchase);
+        }
+
+        if (typeof window.gtag === 'function') {
+            sendPurchase();
+            return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', GA_ID, { send_page_view: false });
+        sendPurchase();
+
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(script);
+    })();
+    </script>
+</body>
+</html>
