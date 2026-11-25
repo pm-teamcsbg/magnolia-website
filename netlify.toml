@@ -15,6 +15,12 @@
   to = "/offers.html"
   status = 200
 
+# Clean URL for the contact page (magnoliabythesea.com/contact)
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
 # Clean URL for the post-booking thank-you page (magnoliabythesea.com/thank-you)
 [[redirects]]
   from = "/thank-you"
